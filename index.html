@@ -204,6 +204,1065 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-rsyslog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/cjbq0kpem0008dwd89c66udsa/">日志</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/cjbq0kpem0008dwd89c66udsa/" class="archive-article-date">
+  	<time datetime="2017-12-28T10:35:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>rsyslog<br>———————/etc/rsyslog.conf————-</p>
+<h1 id="etc-rsyslog-conf-Configuration-file-for-rsyslog"><a href="#etc-rsyslog-conf-Configuration-file-for-rsyslog" class="headerlink" title="/etc/rsyslog.conf    Configuration file for rsyslog."></a>/etc/rsyslog.conf    Configuration file for rsyslog.</h1><p>#</p>
+<h1 id="For-more-information-see"><a href="#For-more-information-see" class="headerlink" title="For more information see"></a>For more information see</h1><h1 id="usr-share-doc-rsyslog-doc-html-rsyslog-conf-html"><a href="#usr-share-doc-rsyslog-doc-html-rsyslog-conf-html" class="headerlink" title="/usr/share/doc/rsyslog-doc/html/rsyslog_conf.html"></a>/usr/share/doc/rsyslog-doc/html/rsyslog_conf.html</h1><p>#</p>
+<h1 id="Default-logging-rules-can-be-found-in-etc-rsyslog-d-50-default-conf"><a href="#Default-logging-rules-can-be-found-in-etc-rsyslog-d-50-default-conf" class="headerlink" title="Default logging rules can be found in /etc/rsyslog.d/50-default.conf"></a>Default logging rules can be found in /etc/rsyslog.d/50-default.conf</h1><p>#################</p>
+<h4 id="MODULES"><a href="#MODULES" class="headerlink" title="MODULES"></a>MODULES</h4><p>#################</p>
+<p>module(load=”imuxsock”) # provides support for local system logging<br>module(load=”imklog”)   # provides kernel logging support</p>
+<p>#module(load=”immark”)  # provides –MARK– message capability</p>
+<h1 id="provides-UDP-syslog-reception"><a href="#provides-UDP-syslog-reception" class="headerlink" title="provides UDP syslog reception"></a>provides UDP syslog reception</h1><p>#module(load=”imudp”)</p>
+<p>#input(type=”imudp” port=”514”)</p>
+<h1 id="provides-TCP-syslog-reception"><a href="#provides-TCP-syslog-reception" class="headerlink" title="provides TCP syslog reception"></a>provides TCP syslog reception</h1><p>#module(load=”imtcp”)</p>
+<p>#input(type=”imtcp” port=”514”)</p>
+<h1 id="Enable-non-kernel-facility-klog-messages"><a href="#Enable-non-kernel-facility-klog-messages" class="headerlink" title="Enable non-kernel facility klog messages"></a>Enable non-kernel facility klog messages</h1><p>$KLogPermitNonKernelFacility on</p>
+<p>###########################</p>
+<h4 id="GLOBAL-DIRECTIVES"><a href="#GLOBAL-DIRECTIVES" class="headerlink" title="GLOBAL DIRECTIVES"></a>GLOBAL DIRECTIVES</h4><p>###########################</p>
+<p>#</p>
+<h1 id="Use-traditional-timestamp-format"><a href="#Use-traditional-timestamp-format" class="headerlink" title="Use traditional timestamp format."></a>Use traditional timestamp format.</h1><h1 id="To-enable-high-precision-timestamps-comment-out-the-following-line"><a href="#To-enable-high-precision-timestamps-comment-out-the-following-line" class="headerlink" title="To enable high precision timestamps, comment out the following line."></a>To enable high precision timestamps, comment out the following line.</h1><p>#<br>$ActionFileDefaultTemplate RSYSLOG_TraditionalFileFormat</p>
+<h1 id="Filter-duplicated-messages"><a href="#Filter-duplicated-messages" class="headerlink" title="Filter duplicated messages"></a>Filter duplicated messages</h1><p>$RepeatedMsgReduction on</p>
+<p>#</p>
+<h1 id="Set-the-default-permissions-for-all-log-files"><a href="#Set-the-default-permissions-for-all-log-files" class="headerlink" title="Set the default permissions for all log files."></a>Set the default permissions for all log files.</h1><p>#<br>$FileOwner syslog<br>$FileGroup adm<br>$FileCreateMode 0640<br>$DirCreateMode 0755<br>$Umask 0022<br>$PrivDropToUser syslog<br>$PrivDropToGroup syslog</p>
+<p>#</p>
+<h1 id="Where-to-place-spool-and-state-files"><a href="#Where-to-place-spool-and-state-files" class="headerlink" title="Where to place spool and state files"></a>Where to place spool and state files</h1><p>#<br>$WorkDirectory /var/spool/rsyslog</p>
+<p>#</p>
+<h1 id="Include-all-config-files-in-etc-rsyslog-d"><a href="#Include-all-config-files-in-etc-rsyslog-d" class="headerlink" title="Include all config files in /etc/rsyslog.d/"></a>Include all config files in /etc/rsyslog.d/</h1><p>#<br>$IncludeConfig /etc/rsyslog.d/*.conf</p>
+<h1 id="Log-all-kernel-messages-to-the-console"><a href="#Log-all-kernel-messages-to-the-console" class="headerlink" title="Log all kernel messages to the console."></a>Log all kernel messages to the console.</h1><h1 id="Logging-much-else-clutters-up-the-screen"><a href="#Logging-much-else-clutters-up-the-screen" class="headerlink" title="Logging much else clutters up the screen."></a>Logging much else clutters up the screen.</h1><p>#kern.* /dev/console</p>
+<h1 id="Log-anything-except-mail-of-level-info-or-higher"><a href="#Log-anything-except-mail-of-level-info-or-higher" class="headerlink" title="Log anything (except mail) of level info or higher."></a>Log anything (except mail) of level info or higher.</h1><h1 id="Don’t-log-private-authentication-messages"><a href="#Don’t-log-private-authentication-messages" class="headerlink" title="Don’t log private authentication messages!"></a>Don’t log private authentication messages!</h1><p>*.info;mail.none;authpriv.none;cron.none /var/log/messages</p>
+<h1 id="The-authpriv-file-has-restricted-access"><a href="#The-authpriv-file-has-restricted-access" class="headerlink" title="The authpriv file has restricted access."></a>The authpriv file has restricted access.</h1><p>authpriv.* /var/log/secure</p>
+<h1 id="Log-all-the-mail-messages-in-one-place"><a href="#Log-all-the-mail-messages-in-one-place" class="headerlink" title="Log all the mail messages in one place."></a>Log all the mail messages in one place.</h1><p>mail.* -/var/log/maillog</p>
+<h1 id="Log-cron-stuff"><a href="#Log-cron-stuff" class="headerlink" title="Log cron stuff"></a>Log cron stuff</h1><p>cron.* /var/log/cron</p>
+<h1 id="Everybody-gets-emergency-messages"><a href="#Everybody-gets-emergency-messages" class="headerlink" title="Everybody gets emergency messages"></a>Everybody gets emergency messages</h1><p><em>.emerg </em></p>
+<h1 id="Save-news-errors-of-level-crit-and-higher-in-a-special-file"><a href="#Save-news-errors-of-level-crit-and-higher-in-a-special-file" class="headerlink" title="Save news errors of level crit and higher in a special file."></a>Save news errors of level crit and higher in a special file.</h1><p>uucp,news.crit /var/log/spooler</p>
+<h1 id="Save-boot-messages-also-to-boot-log"><a href="#Save-boot-messages-also-to-boot-log" class="headerlink" title="Save boot messages also to boot.log"></a>Save boot messages also to boot.log</h1><p>local7.* /var/log/boot.log</p>
+<p>#iptables log<br>kern.warning /var/log/iptables.log</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/cjbq0kpem0008dwd89c66udsa/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-iptables" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/cjbq0kpea0002dwd8rui8jjaj/">防火墙</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/cjbq0kpea0002dwd8rui8jjaj/" class="archive-article-date">
+  	<time datetime="2017-12-28T09:35:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>iptables.<br>sudo apt-get install iptables             # ubuntu</p>
+<p>service iptables  (start|stop|restart|status)</p>
+<p>规则列表<br>iptables -L -n<br>清初列表<br>iptables -F</p>
+<p>iptables -A INPUT -p tcp –dport 22 -j ACCEPT<br>iptables -A INPUT -p tcp –dport 80 -j ACCEPT<br>iptables -A INPUT -p tcp –dport 443 -j ACCEPT<br>iptables -A INPUT -p tcp –dport 5830 -j ACCEPT<br>iptables -A INPUT -p tcp –dport 14151 -j ACCEPT<br>iptables -A INPUT -p tcp –dport 14152 -j ACCEPT<br>iptables -A INPUT -p tcp –dport 14153 -j ACCEPT</p>
+<p>#允许ping<br>iptables -A INPUT -p icmp -m icmp –icmp-type 8 -j ACCEPT</p>
+<p>#禁止其他未允许的规则访问<br>iptables -A INPUT -j REJECT  #（注意：如果22端口未加入允许规则，SSH链接会直接断开。）<br>iptables -A FORWARD -j REJECT</p>
+<p>#屏蔽单个IP的命令是<br>iptables -I INPUT -s 123.45.6.7 -j DROP</p>
+<p>#封整个段即从123.0.0.1到123.255.255.254的命令<br>iptables -I INPUT -s 123.0.0.0/8 -j DROP</p>
+<p>#封IP段即从123.45.0.1到123.45.255.254的命令<br>iptables -I INPUT -s 124.45.0.0/16 -j DROP</p>
+<p>#封IP段即从123.45.6.1到123.45.6.254的命令是<br>iptables -I INPUT -s 123.45.6.0/24 -j DROP</p>
+<p>删除已添加的iptables规则,以序号标记显示<br>iptables -L -n –line-numbers<br>比如要删除INPUT里序号为8的规则(要删除OUTPUT的话就改成OUTPUT，以此类推)<br>iptables -D INPUT 8</p>
+<p>允许35.197.104.169访问本机的8530端口<br>iptables -I INPUT -s 35.197.104.169 -p tcp –dport 8530 -j ACCEPT<br>iptables -I INPUT -s 35.185.163.45 -p tcp –dport 8530 -j ACCEPT<br>iptables -I INPUT -s 192.168.1.0/24 -p tcp –dport 8530 -j ACCEPT</p>
+<p>启用iptables的日志<br>$ iptables -A INPUT -j LOG<br>查看iptables的日志<br>启用iptables日志后。根据您的操作系统，检查以下日志文件来查看iptables日志的生成。<br>在Ubuntu和Debian<br>iptables的日志由内核生成的。因此，检查以下内核日志文件。<br>$ tailf /var/log/kern.log<br>在CentOS / RHEL和Fedora</p>
+<h1 id="cat-var-log-messages"><a href="#cat-var-log-messages" class="headerlink" title="cat /var/log/messages"></a>cat /var/log/messages</h1><p>更改iptables的日志文件名<br>要更改iptables的日志文件名编辑 etc/rsyslog.conf 文件，并添加下列配置到文件中。</p>
+<h1 id="vi-etc-syslog-conf-添加以下行"><a href="#vi-etc-syslog-conf-添加以下行" class="headerlink" title="vi /etc/syslog.conf 添加以下行"></a>vi /etc/syslog.conf 添加以下行</h1><p>kern.warning /var/log/iptables.log 现在，使用以下命令重新启动rsyslog服务。<br>$ service rsyslog restart</p>
+<p>iptables的开机启动及规则保存<br>CentOS上可以执行：service iptables save保存规则。<br>另外更需要注意的是Debian/Ubuntu上iptables是不会保存规则的。<br>需要按如下步骤进行，让网卡关闭是保存iptables规则，启动时加载iptables规则：<br>创建/etc/network/if-post-down.d/iptables 文件，添加如下内容：</p>
+<p>#!/bin/bash<br>iptables-save &gt; /etc/iptables.rules<br>执行：chmod +x /etc/network/if-post-down.d/iptables 添加执行权限。<br>创建/etc/network/if-pre-up.d/iptables 文件，添加如下内容：</p>
+<p>#!/bin/bash<br>iptables-restore &lt; /etc/iptables.rules<br>执行：chmod +x /etc/network/if-pre-up.d/iptables 添加执行权限。<br>关于更多的iptables的使用方法可以执行：iptables –help或网上搜索一下iptables参数的说明。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/cjbq0kpea0002dwd8rui8jjaj/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-lnmp" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/cjbq0kpeg0005dwd85sva9rnf/">Lnmp</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/cjbq0kpeg0005dwd85sva9rnf/" class="archive-article-date">
+  	<time datetime="2017-12-28T08:35:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.1 安装Nginx</p>
+<p>$sudo apt-get install nginx</p>
+<p>配置在/etc/nginx下，每个虚拟主机已经安排在了/etc/nginx/sites-available下<br>程序在/usr/sbin/nginx</p>
+<p>日志在/var/log/nginx<br>并在/etc/init.d/下创建了启动脚本nginx</p>
+<p>默认的虚拟主机的目录设置在了/var/www/nginx-default (有的版本 默认的虚拟主机的目录设置在</p>
+<p>了/var/www, 请参考/etc/nginx/sites-available里的配置)</p>
+<p>$sudo /etc/init.d/nginx start</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/cjbq0kpeg0005dwd85sva9rnf/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ssr" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/cjbq0kpeo0009dwd8z3nks20m/">梯子软件</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/cjbq0kpeo0009dwd8z3nks20m/" class="archive-article-date">
+  	<time datetime="2017-12-28T07:35:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>可以查看 ShadowsocksR 进程是否已经启动。<br>本脚本安装完成后，已将 ShadowsocksR 自动加入开机自启动。</p>
+<p>使用命令：<br>启动：/etc/init.d/shadowsocks start<br>停止：/etc/init.d/shadowsocks stop<br>重启：/etc/init.d/shadowsocks restart<br>状态：/etc/init.d/shadowsocks status</p>
+<p>配置文件路径：/etc/shadowsocks.json<br>日志文件路径：/var/log/shadowsocks.log<br>代码安装目录：/usr/local/shadowsocks    </p>
+<p>配置文件路径为 /etc/v2ray/config.json</p>
+<p>使用以下命令启动 V2Ray:<br>service v2ray  (start|stop|restart|status)</p>
+<p>98e89dcb-53c9-44aa-a70b-32549ea0b761</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/cjbq0kpeo0009dwd8z3nks20m/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-disk" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/cjbq0kpe10000dwd8wtjlha7p/">磁盘相关</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/cjbq0kpe10000dwd8wtjlha7p/" class="archive-article-date">
+  	<time datetime="2017-12-28T06:35:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="cd-var"><a href="#cd-var" class="headerlink" title="cd /var/"></a>cd /var/</h1><p>获取1GB的文件块（一般设置为内存的2倍）：</p>
+<h1 id="dd-if-dev-zero-of-swapfile-bs-1M-count-2048"><a href="#dd-if-dev-zero-of-swapfile-bs-1M-count-2048" class="headerlink" title="dd if=/dev/zero of=swapfile bs=1M count=2048"></a>dd if=/dev/zero of=swapfile bs=1M count=2048</h1><p>创建Swap文件：</p>
+<h1 id="sbin-mkswap-swapfile"><a href="#sbin-mkswap-swapfile" class="headerlink" title="/sbin/mkswap swapfile"></a>/sbin/mkswap swapfile</h1><p>激活Swap文件：</p>
+<h1 id="sbin-swapon-swapfile"><a href="#sbin-swapon-swapfile" class="headerlink" title="/sbin/swapon swapfile"></a>/sbin/swapon swapfile</h1><p>为了安全，建议修改一下权限：</p>
+<h1 id="chmod-0644-var-swapfile"><a href="#chmod-0644-var-swapfile" class="headerlink" title="chmod 0644 /var/swapfile"></a>chmod 0644 /var/swapfile</h1><p>将swapfile添加到fstab文件中，开机自动启动：</p>
+<h1 id="echo-“-var-swapfile-swap-swap-defaults-0-0”-gt-gt-etc-fstab"><a href="#echo-“-var-swapfile-swap-swap-defaults-0-0”-gt-gt-etc-fstab" class="headerlink" title="echo “/var/swapfile swap swap defaults 0 0” &gt;&gt; /etc/fstab"></a>echo “/var/swapfile swap swap defaults 0 0” &gt;&gt; /etc/fstab</h1><p>搞定了。此时查看内存信息:</p>
+<h1 id="free-m"><a href="#free-m" class="headerlink" title="free -m"></a>free -m</h1><p>出现 “Swap: 1023” 字样表示设置成功。</p>
+<p>这是在阿里云CentOS 7系统上创建好swap分区后的截图。下面记录在阿里云CentOS 7上创建swap分区的步骤</p>
+<p>：<br>①使用dd命令创建一个swap分区</p>
+<p>dd if=/dev/zero of=/home/swap bs=1024 count=1048576<br>count的值是：size（多少M）* 1024，我这里设置的1G虚拟内存，也就是count=1024000.<br>②格式化swap分区</p>
+<p>mkswap /home/swap<br>③把格式化后的文件分区设置为swap分区<br>swapon /home/swap<br>（关闭SWAP分区命令为：[root@localhost Desktop]#swapoff /home/swap）<br>此时，swap分区已经创建好了，使用free命令查看，可见多了一个挂载分区。<br>④swap分区自动挂载<br>vi /etc/fstab<br>在文件末尾加上<br>/home/swap swap swap default 0 0</p>
+<ol>
+<li>查看磁盘空间使用情况：df -h</li>
+<li>进入空间占用最多的目录：cd /</li>
+<li>使用命令 ： du -sh  *   查看根目录下每个文件夹的大小</li>
+<li>进入占用空间比较大的文件夹，然后再使用步骤2,3中命令查找大文件的方法依次查找。</li>
+</ol>
+<p>常用命令<br>查找大文件：find / -type f -size +10G<br>文件大小排序：ls -lhS 或者 du -h * | sort -n</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/cjbq0kpe10000dwd8wtjlha7p/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-lamp" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/cjbq0kpee0004dwd88f2wgmj1/">Lamp</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/cjbq0kpee0004dwd88f2wgmj1/" class="archive-article-date">
+  	<time datetime="2017-12-28T05:35:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>wget -b后台 -C断点续传<br>tail -f wget-log 查看日志</p>
+<p>apt-get install lamp-server^<br>mysql !Q….x</p>
+<p>apt-get install phpmyadmin<br>root !Q…..x</p>
+<p>ln -s /usr/share/phpmyadmin /var/www/html/</p>
+<p>删除链接rm -rf</p>
+<p>/var/www/html</p>
+<p>mkdir 目录名<br>rm -rf 目录名<br>mv 目录名 目录名</p>
+<p>&lt;?php<br>   phpinfo();<br>?&gt;  </p>
+<p>/etc/apache2/sites-available    ls -l<br>/etc/apache2/sites-enabled      ls -l</p>
+<p>sites-available 创建文件<br>xxx.conf</p>
+<virtualhost *:80=""><br>    ServerName www.cczhou.com<br><br>    ServerAdmin webmaster@localhost<br>    DocumentRoot /var/www/html/cczhou<br><br><br>    ErrorLog ${APACHE_LOG_DIR}/error.log<br>    CustomLog ${APACHE_LOG_DIR}/access.log combined<br><br></virtualhost>
+
+<p>#ln -s cczhou.conf ../sites-enabled/cczhou.conf</p>
+<p>#ln -s /etc/apache2/sites-available/cczhou.conf /etc/apache2/sites-enabled/cczhou.conf</p>
+<p>激活CCZHOU<br>sudo a2ensite cczhou<br>/etc/init.d/apache2 restart</p>
+<p>wget <a href="https://wordpress.org/latest.tar.gz" target="_blank" rel="noopener">https://wordpress.org/latest.tar.gz</a><br>tar -xzvf latest.tar.gz</p>
+<p>chmod -R 755 /var/www/html/cczhou<br>chmod -R 755 /data/www/</p>
+<p>find / -name php.ini<br>脚本时间60秒<br>max_execution_time = 60<br>最大内存64MB<br>memory_limit = 64M</p>
+<p>开启Keep-Alive功能</p>
+<p>开启Keep-Alive功能可使客户端到服务器端的连接持续有效，当出现对服务器的后继请求时，Keep-Alive功</p>
+<p>能避免了建立或者重新建立连接。可见，对访问静态网页时，开启Keep-Alive是很有用的。</p>
+<p>因为在进行WordPress管理方面上的优化时，需要安装静态缓存插件，所以，开启Keep-Alive功能十分必要</p>
+<p>。</p>
+<h1 id="vi-usr-local-apache-conf-extra-httpd-default-conf"><a href="#vi-usr-local-apache-conf-extra-httpd-default-conf" class="headerlink" title="vi /usr/local/apache/conf/extra/httpd-default.conf"></a>vi /usr/local/apache/conf/extra/httpd-default.conf</h1><p>依次修改以下四条：</p>
+<p>Timeout 30</p>
+<p>KeepAlive On</p>
+<p>MaxKeepAliveRequests 100</p>
+<p>KeepAliveTimeout 5<br>保存退出：</p>
+<h1 id="wq"><a href="#wq" class="headerlink" title=":wq"></a>:wq</h1><p>然后，重启httpd服务：</p>
+<h1 id="service-httpd-restart"><a href="#service-httpd-restart" class="headerlink" title="service httpd restart"></a>service httpd restart</h1><p>lamp add 创建虚拟主机<br>lamp del 删除虚拟主机<br>lamp list 列出虚拟主机</p>
+<p>程序目录</p>
+<p>MySQL 安装目录: /usr/local/mysql<br>MySQL 数据库目录：/usr/local/mysql/data（默认，安装时可更改路径）<br>MariaDB 安装目录: /usr/local/mariadb<br>MariaDB 数据库目录：/usr/local/mariadb/data（默认，安装时可更改路径）<br>Percona 安装目录: /usr/local/percona<br>Percona 数据库目录：/usr/local/percona/data（默认，安装时可更改路径）<br>PHP 安装目录: /usr/local/php<br>Apache 安装目录： /usr/local/apache</p>
+<p>MySQL 或 MariaDB 或 Percona 命令<br>/etc/init.d/mysqld (start|stop|restart|status)</p>
+<p>Apache 命令<br>/etc/init.d/httpd (start|stop|restart|status)<br>/etc/init.d/httpd restart<br>网站根目录</p>
+<p>默认的网站根目录： /data/www/default</p>
+<p>增加权限<br>chown -R apache:apache /data/www/域名/</p>
+<p>配置文件<br>/usr/local/apache/conf/httpd.conf<br>/usr/local/apache/conf/vhost/域名.conf</p>
+<p>serveralias 增加www.</p>
+<p>mysql -uroot -h192.168.1.24 -P3306 -p kobe24   # -u:用户名、-h:IP 远程连接数据库、-P:端口(默认</p>
+<p>3306)、-p：密码；</p>
+<p>阿里云ECS云服务打包。</p>
+<p>暂停数据库：service mysqld stop</p>
+<p>cd /home/data<br>tar -czvf /home/databak.tar.gz *</p>
+<p>那么/home/data目录下的数据库都会打包备份到/home/databak.tar.gz这个文件</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/cjbq0kpee0004dwd88f2wgmj1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-hexo-github" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/cjbq0kpec0003dwd8kvjg2f97/">github pages</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/cjbq0kpec0003dwd8kvjg2f97/" class="archive-article-date">
+  	<time datetime="2017-12-28T04:35:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>ssh -T git@github.com</p>
+<h1 id="start-the-ssh-agent-in-the-background"><a href="#start-the-ssh-agent-in-the-background" class="headerlink" title="start the ssh-agent in the background"></a>start the ssh-agent in the background</h1><p>eval $(ssh-agent -s)<br>Agent pid 59566</p>
+<p>ssh-add ~/.ssh/id_rsa</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/cjbq0kpec0003dwd8kvjg2f97/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-markdown" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/cjbq0kpei0006dwd8dam1hgqn/">markdown</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/cjbq0kpei0006dwd8dam1hgqn/" class="archive-article-date">
+  	<time datetime="2017-12-28T03:35:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="README"><a href="#README" class="headerlink" title="README"></a>README</h1><p>该文件用来测试和展示书写README的各种markdown语法。GitHub的markdown语法在标准的markdown语法基础上做了扩充，称之为<code>GitHub Flavored Markdown</code>。简称<code>GFM</code>，GFM在GitHub上有广泛应用，除了README文件外，issues和wiki均支持markdown语法。</p>
+<hr>
+<table>
+<thead>
+<tr>
+<th>Author</th>
+<th>果冻虾仁</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E-mail</td>
+<td>Jelly.K.Wang@qq.com</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li><a href="#横线">横线</a></li>
+<li><a href="#标题">标题</a></li>
+<li><a href="#文本">文本</a><ul>
+<li>普通文本</li>
+<li>单行文本</li>
+<li>多行文本</li>
+<li>文字高亮</li>
+<li>换行</li>
+<li>斜体</li>
+<li>粗体</li>
+<li>删除线</li>
+</ul>
+</li>
+<li><a href="#图片">图片</a><ul>
+<li>来源于网络的图片</li>
+<li>GitHub仓库中的图片</li>
+</ul>
+</li>
+<li><a href="#链接">链接</a> <ul>
+<li>文字超链接<ul>
+<li>链接外部URL</li>
+<li>链接本仓库里的URL</li>
+</ul>
+</li>
+<li>锚点</li>
+<li><a href="#图片链接">图片链接</a></li>
+</ul>
+</li>
+<li><a href="#列表">列表</a><ul>
+<li>无序列表</li>
+<li>有序列表</li>
+<li>复选框列表</li>
+</ul>
+</li>
+<li><a href="#块引用">块引用</a></li>
+<li><a href="#代码高亮">代码高亮</a></li>
+<li><a href="#表格">表格</a> </li>
+<li><a href="#表情">表情</a></li>
+<li><a href="#diff语法">diff语法</a></li>
+</ul>
+<h3 id="横线"><a href="#横线" class="headerlink" title="横线"></a>横线</h3><hr>
+<p><em>*</em>、—、___可以显示横线效果</p>
+<h2 id=""><a href="#" class="headerlink" title="*"></a><em>*</em></h2><hr>
+<h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><h2 id="文本"><a href="#文本" class="headerlink" title="文本"></a>文本</h2><h3 id="普通文本"><a href="#普通文本" class="headerlink" title="普通文本"></a>普通文本</h3><p>这是一段普通的文本</p>
+<h3 id="单行文本"><a href="#单行文本" class="headerlink" title="单行文本"></a>单行文本</h3><pre><code>Hello,大家好，我是果冻虾仁。
+</code></pre><p>在一行开头加入1个Tab或者4个空格。</p>
+<h3 id="文本块"><a href="#文本块" class="headerlink" title="文本块"></a>文本块</h3><h4 id="语法1"><a href="#语法1" class="headerlink" title="语法1"></a>语法1</h4><p>在连续几行的文本开头加入1个Tab或者4个空格。</p>
+<pre><code>欢迎到访
+很高兴见到您
+祝您，早上好，中午好，下午好，晚安
+</code></pre><h4 id="语法2"><a href="#语法2" class="headerlink" title="语法2"></a>语法2</h4><p>使用一对各三个的反引号：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">欢迎到访</span><br><span class="line">我是C++码农</span><br><span class="line">你可以在知乎、CSDN、简书搜索【果冻虾仁】找到我</span><br></pre></td></tr></table></figure></p>
+<p>该语法也可以实现代码高亮，见<a href="#代码高亮">代码高亮</a></p>
+<h3 id="文字高亮"><a href="#文字高亮" class="headerlink" title="文字高亮"></a>文字高亮</h3><p>文字高亮功能能使行内部分文字高亮，使用一对反引号。<br>语法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`linux` `网络编程` `socket` `epoll`</span><br></pre></td></tr></table></figure></p>
+<p>效果：<code>linux</code> <code>网络编程</code> <code>socket</code> <code>epoll</code></p>
+<p>也适合做一篇文章的tag</p>
+<h4 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h4><p>直接回车不能换行，<br>可以在上一行文本后面补两个空格，<br>这样下一行的文本就换行了。</p>
+<p>或者就是在两行文本直接加一个空行。</p>
+<p>也能实现换行效果，不过这个行间距有点大。</p>
+<h4 id="斜体、粗体、删除线"><a href="#斜体、粗体、删除线" class="headerlink" title="斜体、粗体、删除线"></a>斜体、粗体、删除线</h4><table>
+<thead>
+<tr>
+<th>语法</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>*斜体1*</code></td>
+<td><em>斜体1</em></td>
+</tr>
+<tr>
+<td><code>_斜体2_</code></td>
+<td><em>斜体2</em></td>
+</tr>
+<tr>
+<td><code>**粗体1**</code></td>
+<td><strong>粗体1</strong></td>
+</tr>
+<tr>
+<td><code>__粗体2__</code></td>
+<td><strong>粗体2</strong></td>
+</tr>
+<tr>
+<td><code>这是一个 ~~删除线~~</code></td>
+<td>这是一个 <del>删除线</del></td>
+</tr>
+<tr>
+<td><code>***斜粗体1***</code></td>
+<td><strong><em>斜粗体1</em></strong></td>
+</tr>
+<tr>
+<td><code>___斜粗体2___</code></td>
+<td><strong><em>斜粗体2</em></strong></td>
+</tr>
+<tr>
+<td><code>***~~斜粗体删除线1~~***</code></td>
+<td><strong><em><del>斜粗体删除线1</del></em></strong></td>
+</tr>
+<tr>
+<td><code>~~***斜粗体删除线2***~~</code></td>
+<td><del><strong><em>斜粗体删除线2</em></strong></del></td>
+</tr>
+</tbody>
+</table>
+<pre><code>斜体、粗体、删除线可混合使用
+</code></pre><h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>基本格式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![alt](URL title)</span><br></pre></td></tr></table></figure></p>
+<p>alt和title即对应HTML中的alt和title属性（都可省略）：</p>
+<ul>
+<li>alt表示图片显示失败时的替换文本</li>
+<li>title表示鼠标悬停在图片时的显示文本（注意这里要加引号）</li>
+</ul>
+<p>URL即图片的url地址，如果引用本仓库中的图片，直接使用<strong>相对路径</strong>就可了，如果引用其他github仓库中的图片要注意格式，即：<code>仓库地址/raw/分支名/图片路径</code>，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/guodongxiaren/ImageCache/raw/master/Logo/foryou.gif</span><br></pre></td></tr></table></figure></p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>语法</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>![baidu](http://www.baidu.com/img/bdlogo.gif &quot;百度logo&quot;)</code></td>
+<td><img src="http://www.baidu.com/img/bdlogo.gif" alt="baidu" title="百度logo"></td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>![][foryou]</code></td>
+<td>![][foryou]</td>
+</tr>
+</tbody>
+</table>
+<p>注意例2的写法使用了<strong>URL标识符</strong>的形式，在<a href="#链接">链接</a>一节有介绍。</p>
+<blockquote>
+<p>在文末有foryou的定义：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[foryou]:https://github.com/guodongxiaren/ImageCache/raw/master/Logo/foryou.gif</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><h3 id="链接外部URL"><a href="#链接外部URL" class="headerlink" title="链接外部URL"></a>链接外部URL</h3><table>
+<thead>
+<tr>
+<th>#</th>
+<th>语法</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>[我的博客](http://blog.csdn.net/guodongxiaren &quot;悬停显示&quot;)</code></td>
+<td><a href="http://blog.csdn.net/guodongxiaren" title="悬停显示" target="_blank" rel="noopener">我的博客</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>[我的知乎][zhihu]</code></td>
+<td>[我的知乎][zhihu]</td>
+</tr>
+</tbody>
+</table>
+<p>语法2由两部分组成：</p>
+<ul>
+<li>第一部分使用两个中括号，[ ]里的标识符（本例中zhihu），可以是数字，字母等的组合，标识符上下对应就行了（<strong>姑且称之为URL标识符</strong>）</li>
+<li>第二部分标记实际URL。</li>
+</ul>
+<blockquote>
+<p>使用URL标识符能达到复用的目的，一般把全文所有的URL标识符统一放在文章末尾，这样看起来比较干净。</p>
+<blockquote>
+<p>URL标识符是我起的名字，不知道是否准确。囧。。</p>
+</blockquote>
+</blockquote>
+<h3 id="链接本仓库里的URL"><a href="#链接本仓库里的URL" class="headerlink" title="链接本仓库里的URL"></a>链接本仓库里的URL</h3><table>
+<thead>
+<tr>
+<th>语法</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[我的简介](/example/profile.md)</code></td>
+<td><a href="/example/profile.md">我的简介</a></td>
+</tr>
+<tr>
+<td><code>[Book](./Book)</code></td>
+<td><a href="/Book">Book</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="图片链接"><a href="#图片链接" class="headerlink" title="图片链接"></a>图片链接</h3><p>给图片加链接的本质是混合图片显示语法和普通的链接语法。普通的链接中[ ]内部是链接要显示的文本，而图片链接[ ]里面则是要显示的图片。<br>直接混合两种语法当然可以，但是十分啰嗦，为此我们可以使用URL标识符的形式。</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>语法</th>
+<th style="text-align:center">效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>[![weibo-logo]](http://weibo.com/linpiaochen)</code></td>
+<td style="text-align:center"><a href="http://weibo.com/linpiaochen" target="_blank" rel="noopener">![weibo-logo]</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>[![](/img/zhihu.png &quot;我的知乎，欢迎关注&quot;)][zhihu]</code></td>
+<td style="text-align:center">[<img src="/img/zhihu.png" alt="" title="我的知乎，欢迎关注">][zhihu]</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>[![csdn-logo]][csdn]</code></td>
+<td style="text-align:center">[![csdn-logo]][csdn]</td>
+</tr>
+</tbody>
+</table>
+<p>因为图片本身和链接本身都支持URL标识符的形式，所以图片链接也可以很简洁（见例3）。<br>注意，此时鼠标悬停时显示的文字是图片的title，而非链接本身的title了。</p>
+<blockquote>
+<p>本文URL标识符都放置于文末</p>
+</blockquote>
+<h3 id="锚点"><a href="#锚点" class="headerlink" title="锚点"></a>锚点</h3><p>其实呢，每一个标题都是一个锚点，和HTML的锚点（<code>#</code>）类似，比如我们 </p>
+<table>
+<thead>
+<tr>
+<th>语法</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[回到顶部](#readme)</code></td>
+<td><a href="#readme">回到顶部</a></td>
+</tr>
+</tbody>
+</table>
+<p>不过要注意，标题中的英文字母都被转化为<strong>小写字母</strong>了。</p>
+<blockquote>
+<p>以前GitHub对中文支持的不好，所以中文标题不能正确识别为锚点，但是现在已经没问题啦！</p>
+</blockquote>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><ul>
+<li>昵称：果冻虾仁</li>
+</ul>
+<ul>
+<li>别名：隔壁老王</li>
+</ul>
+<ul>
+<li>英文名：Jelly</li>
+</ul>
+<h3 id="多级无序列表"><a href="#多级无序列表" class="headerlink" title="多级无序列表"></a>多级无序列表</h3><ul>
+<li>编程语言<ul>
+<li>脚本语言<ul>
+<li>Python</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><h4 id="一般效果"><a href="#一般效果" class="headerlink" title="一般效果"></a>一般效果</h4><p>就是在数字后面加一个点，再加一个空格。不过看起来起来可能不够明显。<br>面向对象的三个基本特征：</p>
+<ol>
+<li>封装</li>
+<li>继承</li>
+<li>多态</li>
+</ol>
+<h4 id="多级有序列表"><a href="#多级有序列表" class="headerlink" title="多级有序列表"></a>多级有序列表</h4><p>和无序列表一样，有序列表也有多级结构：  </p>
+<ol>
+<li>这是一级的有序列表，数字1还是1<ol>
+<li>这是二级的有序列表，阿拉伯数字在显示的时候变成了罗马数字<ol>
+<li>这是三级的有序列表，数字在显示的时候变成了英文字母</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="复选框列表"><a href="#复选框列表" class="headerlink" title="复选框列表"></a>复选框列表</h3><ul>
+<li style="list-style: none"><input type="checkbox" checked> 需求分析</li>
+<li style="list-style: none"><input type="checkbox" checked> 系统设计</li>
+<li style="list-style: none"><input type="checkbox" checked> 详细设计</li>
+<li style="list-style: none"><input type="checkbox"> 编码</li>
+<li style="list-style: none"><input type="checkbox"> 测试</li>
+<li style="list-style: none"><input type="checkbox"> 交付</li>
+</ul>
+<p>您可以使用这个功能来标注某个项目各项任务的完成情况。</p>
+<blockquote>
+<p>Tip:</p>
+<blockquote>
+<p>在GitHub的<strong>issue</strong>中使用该语法是可以实时点击复选框来勾选或解除勾选的，而无需修改issue原文。</p>
+</blockquote>
+</blockquote>
+<h2 id="块引用"><a href="#块引用" class="headerlink" title="块引用"></a>块引用</h2><h3 id="常用于引用文本"><a href="#常用于引用文本" class="headerlink" title="常用于引用文本"></a>常用于引用文本</h3><h4 id="文本摘自《深入理解计算机系统》P27"><a href="#文本摘自《深入理解计算机系统》P27" class="headerlink" title="文本摘自《深入理解计算机系统》P27"></a>文本摘自《深入理解计算机系统》P27</h4><p>　令人吃惊的是，在哪种字节顺序是合适的这个问题上，人们表现得非常情绪化。实际上术语“little endian”（小端）和“big endian”（大端）出自Jonathan Swift的《格利佛游记》一书，其中交战的两个派别无法就应该从哪一端打开一个半熟的鸡蛋达成一致。因此，争论沦为关于社会政治的争论。只要选择了一种规则并且始终如一的坚持，其实对于哪种字节排序的选择都是任意的。</p>
+<blockquote>
+<p><strong>“端”（endian）的起源</strong><br>以下是Jonathan Swift在1726年关于大小端之争历史的描述：<br>“……下面我要告诉你的是，Lilliput和Blefuscu这两大强国在过去36个月里一直在苦战。战争开始是由于以下的原因：我们大家都认为，吃鸡蛋前，原始的方法是打破鸡蛋较大的一端，可是当今的皇帝的祖父小时候吃鸡蛋，一次按古法打鸡蛋时碰巧将一个手指弄破了，因此他的父亲，当时的皇帝，就下了一道敕令，命令全体臣民吃鸡蛋时打破较小的一端，违令者重罚。”</p>
+</blockquote>
+<h3 id="块引用有多级结构"><a href="#块引用有多级结构" class="headerlink" title="块引用有多级结构"></a>块引用有多级结构</h3><blockquote>
+<p>数据结构</p>
+<blockquote>
+<p>树</p>
+<blockquote>
+<p>二叉树</p>
+<blockquote>
+<p>平衡二叉树</p>
+<blockquote>
+<p>满二叉树</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="代码高亮"><a href="#代码高亮" class="headerlink" title="代码高亮"></a>代码高亮</h2><p>在三个反引号后面加上编程语言的名字，另起一行开始写代码，最后一行再加上三个反引号。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[]args)</span></span>&#123;&#125; <span class="comment">//Java</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span> <span class="comment">//C</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"hello GitHub"</span> <span class="comment">#Bash</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"myH1"</span>).innerHTML=<span class="string">"Welcome to my Homepage"</span>; <span class="comment">//javascipt</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> &amp;<span class="keyword">operator</span>+(<span class="keyword">const</span> <span class="built_in">string</span>&amp; A,<span class="keyword">const</span> <span class="built_in">string</span>&amp; B) <span class="comment">//cpp</span></span><br></pre></td></tr></table></figure>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><table>
+<thead>
+<tr>
+<th>表头1</th>
+<th>表头2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>表格单元</td>
+<td>表格单元</td>
+<td></td>
+</tr>
+<tr>
+<td>表格单元</td>
+<td>表格单元</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>表头1</th>
+<th>表头2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>表格单元</td>
+<td>表格单元</td>
+</tr>
+<tr>
+<td>表格单元</td>
+<td>表格单元</td>
+</tr>
+</tbody>
+</table>
+<h3 id="对齐"><a href="#对齐" class="headerlink" title="对齐"></a>对齐</h3><p>表格可以指定对齐方式</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">左对齐</th>
+<th style="text-align:center">居中</th>
+<th style="text-align:right">右对齐</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">col 3 is</td>
+<td style="text-align:center">some wordy text</td>
+<td style="text-align:right">$1600</td>
+</tr>
+<tr>
+<td style="text-align:left">col 2 is</td>
+<td style="text-align:center">centered</td>
+<td style="text-align:right">$12</td>
+</tr>
+<tr>
+<td style="text-align:left">zebra stripes</td>
+<td style="text-align:center">are neat</td>
+<td style="text-align:right">$1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="混合其他语法"><a href="#混合其他语法" class="headerlink" title="混合其他语法"></a>混合其他语法</h3><p>表格单元中的内容可以和其他大多数GFM语法配合使用，如：  </p>
+<h4 id="使用普通文本的删除线，斜体等效果"><a href="#使用普通文本的删除线，斜体等效果" class="headerlink" title="使用普通文本的删除线，斜体等效果"></a>使用普通文本的删除线，斜体等效果</h4><table>
+<thead>
+<tr>
+<th>名字</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Help</td>
+<td><del>Display the</del> help window.</td>
+</tr>
+<tr>
+<td>Close</td>
+<td><em>Closes</em> a window</td>
+</tr>
+</tbody>
+</table>
+<h4 id="表格中嵌入图片（链接）"><a href="#表格中嵌入图片（链接）" class="headerlink" title="表格中嵌入图片（链接）"></a>表格中嵌入图片（链接）</h4><p>其实前面介绍图片显示、图片链接的时候为了清晰就是放在在表格中显示的。</p>
+<table>
+<thead>
+<tr>
+<th>图片</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>![baidu][baidu-logo]</td>
+<td>百度</td>
+</tr>
+</tbody>
+</table>
+<h2 id="表情"><a href="#表情" class="headerlink" title="表情"></a>表情</h2><p>Github的Markdown语法支持添加emoji表情，输入不同的符号码（两个冒号包围的字符）可以显示出不同的表情。</p>
+<p>比如<code>:blush:</code>，可以显示:blush:。</p>
+<p>具体每一个表情的符号码，可以查询GitHub的官方网页<a href="http://www.emoji-cheat-sheet.com" target="_blank" rel="noopener">http://www.emoji-cheat-sheet.com</a>。</p>
+<p>但是这个网页每次都打开<strong>奇慢</strong>。。所以我整理到了本repo中，大家可以直接在此查看<a href="./emoji.md">emoji</a>。</p>
+<h2 id="diff语法"><a href="#diff语法" class="headerlink" title="diff语法"></a>diff语法</h2><p>版本控制的系统中都少不了diff的功能，即展示一个文件内容的增加与删除。<br>GFM中可以显示的展示diff效果。使用绿色表示新增，红色表示删除。</p>
+<p>其语法与代码高亮类似，只是在三个反引号后面写diff，<br>并且其内容中，以 <code>+</code>开头表示新增，<code>-</code>开头表示删除。</p>
+<p>效果如下：</p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="addition">+ 鸟宿池边树，僧敲月下门</span></span><br><span class="line"><span class="deletion">- 鸟宿池边树，僧推月下门</span></span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/cjbq0kpei0006dwd8dam1hgqn/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-ssh-login" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -211,12 +1270,12 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/cjbozlgp10001e0d8kb8v1zlg/">使用ssh登录</a>
+      <a class="article-title" href="/2017/12/cjbq0kpek0007dwd8peb5bwtb/">使用ssh登录</a>
     </h1>
   
 
         
-        <a href="/2017/12/cjbozlgp10001e0d8kb8v1zlg/" class="archive-article-date">
+        <a href="/2017/12/cjbq0kpek0007dwd8peb5bwtb/" class="archive-article-date">
   	<time datetime="2017-12-27T08:47:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-27</time>
 </a>
         
@@ -275,7 +1334,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/cjbozlgp10001e0d8kb8v1zlg/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/12/cjbq0kpek0007dwd8peb5bwtb/">展开全文 >></a>
         </p>
       
 
@@ -312,12 +1371,12 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/cjbozlgot0000e0d86xl6mzko/">接触LINUX并登录</a>
+      <a class="article-title" href="/2017/12/cjbq0kpe70001dwd8l3vy7mt7/">接触LINUX并登录</a>
     </h1>
   
 
         
-        <a href="/2017/12/cjbozlgot0000e0d86xl6mzko/" class="archive-article-date">
+        <a href="/2017/12/cjbq0kpe70001dwd8l3vy7mt7/" class="archive-article-date">
   	<time datetime="2017-12-27T05:13:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-27</time>
 </a>
         
@@ -366,7 +1425,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/cjbozlgot0000e0d86xl6mzko/">展开全文 >></a>
+          <a class="article-more-a" href="/2017/12/cjbq0kpe70001dwd8l3vy7mt7/">展开全文 >></a>
         </p>
       
 
