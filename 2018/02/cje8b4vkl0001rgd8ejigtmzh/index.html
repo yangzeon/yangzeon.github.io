@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yzeon.com">
-  <title>接触LINUX并登录 | YZ学习日志</title>
+  <title>树莓派安装Let&#39;s Encrypt SSL证书 | YZ学习日志</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="当你找到这篇文章的时候.肯定是被WINDOWS弄的苦不堪言了.哦~也许就是我自己回来看看而已… 估计只有2018年的WEB USB一统天下了.才会让我对WINDOWS好一点… 除开MAC不说.那个使用太少了.系统又不给瞎折腾.折腾坏了又贵…所以我转投了LINUX阵营 之前的那堆黑历史日志应该不更新了.没啥意思.扔WORDPRESS封存吧.老早就想用静态页面了.你看那个MYSQL居然占微型服务器的6">
+  <meta name="description" content="为了给梯子升级.需要加入TLS传输层安全协议.就有了如下的一篇文章. Let’s Encrypt 简介如果要启用HTTPS.我们就需要从证书授权机构(以下简称CA) 处获取一个证书.Let’s Encrypt 就是一个 CA.我们可以从 Let’s Encrypt 获得网站域名的免费的证书. Certbot 简介Certbot 是Let’s Encrypt官方推荐的获取证书的客户端.可以帮我们获取">
 <meta property="og:type" content="article">
-<meta property="og:title" content="接触LINUX并登录">
-<meta property="og:url" content="http://yzeon.com/2017/12/cje554hdy00031wd8zinhr9id/index.html">
+<meta property="og:title" content="树莓派安装Let&#39;s Encrypt SSL证书">
+<meta property="og:url" content="http://yzeon.com/2018/02/cje8b4vkl0001rgd8ejigtmzh/index.html">
 <meta property="og:site_name" content="YZ学习日志">
-<meta property="og:description" content="当你找到这篇文章的时候.肯定是被WINDOWS弄的苦不堪言了.哦~也许就是我自己回来看看而已… 估计只有2018年的WEB USB一统天下了.才会让我对WINDOWS好一点… 除开MAC不说.那个使用太少了.系统又不给瞎折腾.折腾坏了又贵…所以我转投了LINUX阵营 之前的那堆黑历史日志应该不更新了.没啥意思.扔WORDPRESS封存吧.老早就想用静态页面了.你看那个MYSQL居然占微型服务器的6">
+<meta property="og:description" content="为了给梯子升级.需要加入TLS传输层安全协议.就有了如下的一篇文章. Let’s Encrypt 简介如果要启用HTTPS.我们就需要从证书授权机构(以下简称CA) 处获取一个证书.Let’s Encrypt 就是一个 CA.我们可以从 Let’s Encrypt 获得网站域名的免费的证书. Certbot 简介Certbot 是Let’s Encrypt官方推荐的获取证书的客户端.可以帮我们获取">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-12-27T09:19:17.962Z">
+<meta property="og:updated_time" content="2018-02-27T05:25:21.489Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="接触LINUX并登录">
-<meta name="twitter:description" content="当你找到这篇文章的时候.肯定是被WINDOWS弄的苦不堪言了.哦~也许就是我自己回来看看而已… 估计只有2018年的WEB USB一统天下了.才会让我对WINDOWS好一点… 除开MAC不说.那个使用太少了.系统又不给瞎折腾.折腾坏了又贵…所以我转投了LINUX阵营 之前的那堆黑历史日志应该不更新了.没啥意思.扔WORDPRESS封存吧.老早就想用静态页面了.你看那个MYSQL居然占微型服务器的6">
+<meta name="twitter:title" content="树莓派安装Let&#39;s Encrypt SSL证书">
+<meta name="twitter:description" content="为了给梯子升级.需要加入TLS传输层安全协议.就有了如下的一篇文章. Let’s Encrypt 简介如果要启用HTTPS.我们就需要从证书授权机构(以下简称CA) 处获取一个证书.Let’s Encrypt 就是一个 CA.我们可以从 Let’s Encrypt 获得网站域名的免费的证书. Certbot 简介Certbot 是Let’s Encrypt官方推荐的获取证书的客户端.可以帮我们获取">
   
     <link rel="alternative" href="/atom.xml" title="YZ学习日志" type="application/atom+xml">
   
@@ -206,55 +206,42 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-fristLINUX" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-certbot" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      接触LINUX并登录
+      树莓派安装Let&#39;s Encrypt SSL证书
     </h1>
   
 
         
-        <a href="/2017/12/cje554hdy00031wd8zinhr9id/" class="archive-article-date">
-  	<time datetime="2017-12-27T05:13:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-27</time>
+        <a href="/2018/02/cje8b4vkl0001rgd8ejigtmzh/" class="archive-article-date">
+  	<time datetime="2018-02-27T02:35:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>当你找到这篇文章的时候.肯定是被WINDOWS弄的苦不堪言了.哦~也许就是我自己回来看看而已…</p>
-<p>估计只有2018年的WEB USB一统天下了.才会让我对WINDOWS好一点…</p>
-<p>除开MAC不说.那个使用太少了.系统又不给瞎折腾.折腾坏了又贵…所以我转投了LINUX阵营</p>
-<p>之前的那堆黑历史日志应该不更新了.没啥意思.扔WORDPRESS封存吧.老早就想用静态页面了.你看那个MYSQL居然占微型服务器的60%多资源…</p>
-<p>LINUX wiki <a href="https://zh.wikipedia.org/wiki/Linux" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/Linux</a></p>
-<p>这里就说说系统吧.</p>
-<ul>
-<li>Debian GNU/Linux 8/9</li>
-<li>CentOS 6/7</li>
-<li>Ubuntu 14/16/17</li>
+        <p>为了给梯子升级.需要加入TLS传输层安全协议.就有了如下的一篇文章.</p>
+<h2 id="Let’s-Encrypt-简介"><a href="#Let’s-Encrypt-简介" class="headerlink" title="Let’s Encrypt 简介"></a>Let’s Encrypt 简介</h2><p>如果要启用HTTPS.我们就需要从证书授权机构(以下简称CA) 处获取一个证书.Let’s Encrypt 就是一个 CA.我们可以从 Let’s Encrypt 获得网站域名的免费的证书.</p>
+<h2 id="Certbot-简介"><a href="#Certbot-简介" class="headerlink" title="Certbot 简介"></a>Certbot 简介</h2><p>Certbot 是Let’s Encrypt官方推荐的获取证书的客户端.可以帮我们获取免费的Let’s Encrypt 证书.Certbot 是支持所有 Lunix 内核的操作系统的.这里系统是UBUNTU16.04 硬件是 树莓派3.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/certbot/certbot</span><br></pre></td></tr></table></figure></p>
+<h3 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h3><ul>
+<li>一级域名哪申请的哪解析.绑定IP</li>
+<li>二级域名可以直接使用DNS方式申请证书.这里不讲了.我也用不上</li>
+<li><a href="https://doub.io/dbwz-3/" target="_blank" rel="noopener">教你申请.tk/.ml/.cf/.gq/.ga等免费域名</a><h3 id="用CERTBOT申请证书"><a href="#用CERTBOT申请证书" class="headerlink" title="用CERTBOT申请证书"></a>用CERTBOT申请证书</h3><h4 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h4>升级系统.安装PPA.添加安装包到仓库.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install software-properties-common</span><br><span class="line">sudo add-apt-repository ppa:certbot/certbot</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install python-certbot-nginx</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<p>常见的就这几个.新手选UBUNTU.图形界面不LOW.从WINDOWS过度简单.</p>
-<p>LINUX的命令也很简单粗暴.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">XXX -X</span><br></pre></td></tr></table></figure></p>
-<p>命令我都不记.要用的时候去GOOGLE.后来发现要GOOGLE的地方太多.就有了写一个学习日志的地方.</p>
-<p>目前接触的都是Ubuntu系统.之前买的各种VPS都选的这个.口碑好的那几家我都用过了.性价比来说.有卷肯定选GOOGLE啊.没卷就选有2.5刀的</p>
-<h3 id="选啥版本"><a href="#选啥版本" class="headerlink" title="选啥版本"></a>选啥版本</h3><p>选Ubuntu 16.04 LTS/64位.反正我也不知道32位有啥区别.版本别选最高.一般降一档都可以用.只要不做开发.什么版本什么都无所谓啊</p>
-<p>树莓派                Ubuntu Mate<br>VPS                Ubuntu 16 好像现在17都出来了.</p>
-<h2 id="虚拟机"><a href="#虚拟机" class="headerlink" title="虚拟机"></a>虚拟机</h2><p>没啥好说的.进去就是图形界面</p>
-<h2 id="VPS"><a href="#VPS" class="headerlink" title="VPS"></a>VPS</h2><p>申请之后会给你IP和账号密码.用SSH软件进行连接.WIN系统里我习惯用PUTTY.MAC直接用命令行.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh 服务器IP -p 端口号(如果默认22的话.-p也不用打了)</span><br></pre></td></tr></table></figure>
-<p>我早就用快捷方式连服务器了.多省事…</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\zy\Desktop\putty\PUTTY.EXE -i <span class="string">"C:\Users\zy\Desktop\putty\pi\pi.ppk"</span> -P 8530 zeonpi@192.168.1.88</span><br></pre></td></tr></table></figure>
-<p>PUTTY地址 + 钥匙文件 + 端口号 + 用户名@服务器地址<br>做一个快捷方式…双击~刚开始没那么复杂~直接用户名@服务器地址.</p>
-<p>成功后就应该是<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Using username <span class="string">"用户名"</span>.</span><br><span class="line">Authenticating with public key <span class="string">"钥匙名"</span></span><br><span class="line">Welcome to Ubuntu 16.04.3 LTS (GNU/Linux 4.4.38-v7+ armv7l)</span><br><span class="line"></span><br><span class="line"> * Documentation:  https://help.ubuntu.com</span><br><span class="line"> * Management:     https://landscape.canonical.com</span><br><span class="line"> * Support:        https://ubuntu.com/advantage</span><br><span class="line"></span><br><span class="line">8 packages can be updated.</span><br><span class="line">0 updates are security updates.</span><br><span class="line"></span><br><span class="line">*** System restart required ***</span><br><span class="line">Last login: Tue Dec 26 16:26:56 2017 from 192.168.1.74</span><br><span class="line">用户名@计算机名:~$</span><br></pre></td></tr></table></figure></p>
-<p>如果你用管理员身份登录的话就是ROOT@XXX之类的.管理员权限很大.</p>
-<p>普通用户换成管理员需要用SUDO命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo -i</span><br></pre></td></tr></table></figure></p>
-<p>如果你手贱的话~可以打上升级命令….看见那个<br>8 packages can be updated.<br>0 updates are security updates.<br>没?会告诉你可以升级多少个~如果你新装的话.好几百个可以升级.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get update &amp;&amp; apt-get dist-upgrade -y</span><br></pre></td></tr></table></figure>
-<p>网速不好的话.呵呵…本篇完.</p>
+<h4 id="使用nginx插件获取证书"><a href="#使用nginx插件获取证书" class="headerlink" title="使用nginx插件获取证书"></a>使用nginx插件获取证书</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo certbot --nginx</span><br></pre></td></tr></table></figure>
+<p>这种方式会更改Nginx的配置.之前用ACME.SH一直出错.那种是不更改配置的快速部署方式.反正我又没配置什么.加上也是闲置域名.就无所谓改配置的问题了.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo certbot --nginx certonly</span><br></pre></td></tr></table></figure>
+<p>这个是手动模式.开发者文档.所以没事别用这个了.<a href="https://certbot.eff.org/docs" target="_blank" rel="noopener">To learn more about how to use Certbot read our documentation</a></p>
+<h4 id="自动更新"><a href="#自动更新" class="headerlink" title="自动更新"></a>自动更新</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo certbot renew --dry-run</span><br><span class="line">#添加CRONTAB定时任务.每隔2个月的凌晨2点15分运行一次.注意ROOT权限</span><br><span class="line">15 2 * */2 * certbot renew --pre-hook &quot;service nginx stop&quot; --post-hook &quot;service nginx start&quot;</span><br></pre></td></tr></table></figure>
+<p>这个命令是给快到90天的证书续约的.证书地址 /etc/letsencrypt/live/DOMAIN/fullchain.pem  and /etc/letsencrypt/live/DOMAIN/privkey.pem</p>
+<h4 id="验证证书"><a href="#验证证书" class="headerlink" title="验证证书"></a>验证证书</h4><p><a href="https://www.ssllabs.com/ssltest/index.html" target="_blank" rel="noopener">To learn more about how to use Certbot read our documentation</a><br>查验证书的信息.证书有效期是从 2018 年 2 月 27 号到 2018 年的 4 月 26 号.密钥是 RSA 2048 bits.证书签发机构是 Let’s Encrypt Authority X3 .Trusted 为 Yes 表明我这个证书可信.</p>
 
       
 
@@ -313,7 +300,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yzeon.com/2017/12/cje554hdy00031wd8zinhr9id/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yzeon.com/2018/02/cje8b4vkl0001rgd8ejigtmzh/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -327,15 +314,20 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/12/cje554he700091wd86e4jscqz/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/02/cje8b4vke0000rgd83fctv292/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          使用ssh登录
+          Caddy安装和配置
         
       </div>
     </a>
   
+  
+    <a href="/2017/12/cje8b4vl0000brgd80sx1p4cp/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">日志</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 

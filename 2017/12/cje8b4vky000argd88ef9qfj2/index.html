@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yzeon.com">
-  <title>YZ学习日志</title>
+  <title>使用ssh登录 | YZ学习日志</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="YZ学习日志">
-<meta property="og:url" content="http://yzeon.com/index.html">
+  <meta name="description" content="SSH这个坑到现在还在困扰着我.简单来讲就是这东西就是一个钥匙.一捅.开了.捅不开就被服务器拒绝了.有很多提高安全的方式.比如  更改SSH端口号. 禁止密码登录. 禁止ROOT登录.  别相信那些大的VPS提供商.国内最大的云.我开了防火墙.130多次就试出来密码了…8位大小写混合密码啊!!! SSH之所以能够保证安全.原因在于它采用了公钥加密.整个过程是这样的：  远程主机收到用户的登录请求.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用ssh登录">
+<meta property="og:url" content="http://yzeon.com/2017/12/cje8b4vky000argd88ef9qfj2/index.html">
 <meta property="og:site_name" content="YZ学习日志">
+<meta property="og:description" content="SSH这个坑到现在还在困扰着我.简单来讲就是这东西就是一个钥匙.一捅.开了.捅不开就被服务器拒绝了.有很多提高安全的方式.比如  更改SSH端口号. 禁止密码登录. 禁止ROOT登录.  别相信那些大的VPS提供商.国内最大的云.我开了防火墙.130多次就试出来密码了…8位大小写混合密码啊!!! SSH之所以能够保证安全.原因在于它采用了公钥加密.整个过程是这样的：  远程主机收到用户的登录请求.">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-02-27T03:52:38.240Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="YZ学习日志">
+<meta name="twitter:title" content="使用ssh登录">
+<meta name="twitter:description" content="SSH这个坑到现在还在困扰着我.简单来讲就是这东西就是一个钥匙.一捅.开了.捅不开就被服务器拒绝了.有很多提高安全的方式.比如  更改SSH端口号. 禁止密码登录. 禁止ROOT登录.  别相信那些大的VPS提供商.国内最大的云.我开了防火墙.130多次就试出来密码了…8位大小写混合密码啊!!! SSH之所以能够保证安全.原因在于它采用了公钥加密.整个过程是这样的：  远程主机收到用户的登录请求.">
   
     <link rel="alternative" href="/atom.xml" title="YZ学习日志" type="application/atom+xml">
   
@@ -202,175 +206,66 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-ws-v2-nginx" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-ssh-login" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/cje8b4vkw0008rgd8d0hbdabk/">搞定NGINX SSL了</a>
+    <h1 class="article-title" itemprop="name">
+      使用ssh登录
     </h1>
   
 
         
-        <a href="/2018/03/cje8b4vkw0008rgd8d0hbdabk/" class="archive-article-date">
-  	<time datetime="2018-03-01T06:35:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-01</time>
+        <a href="/2017/12/cje8b4vky000argd88ef9qfj2/" class="archive-article-date">
+  	<time datetime="2017-12-27T08:47:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">并创建 一个 bash 的 alias, 方便你的使用: acme.sh=~/.acme.sh/acme.sh</span><br></pre></td></tr></table></figure>
-<p>之前问题出在ALIAS这里了.直接定义地址后.如果不给权限运行.还是会出错.<br>所以别省事了.还是加上地址打命令吧<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ~/.acme.sh/acme.sh 参数</span><br></pre></td></tr></table></figure></p>
-<p>nginx的配置文件出错好多次.也不知道是什么机制.一直在调用默认文件DEFAULT.<br>我已经在SITES-AVAILABLE中建立新的配置文件.并且建立连接去ENABLE中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp /etc/nginx/sites-available/XXX.COM /etc/nginx/sites-enable/XXX.COM</span><br></pre></td></tr></table></figure></p>
-<p>后来我直接删了default文件.多省事.</p>
-        
-          <a class="article-more-a" href="/2018/03/cje8b4vkw0008rgd8d0hbdabk/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-caddy" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/cje8b4vke0000rgd83fctv292/">Caddy安装和配置</a>
-    </h1>
-  
-
-        
-        <a href="/2018/02/cje8b4vke0000rgd83fctv292/" class="archive-article-date">
-  	<time datetime="2018-02-28T02:35:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>前面那个没搞定WebSocket+TLS+Web.卡在NGINX认证成功后与V2RAY共享钥匙那块.各种出错.<br>别人的nginx可以用acme.sh直接获取钥匙并输出给V2RAY.但是我这个一直报错.</p>
-<h2 id="停用其他WEB服务"><a href="#停用其他WEB服务" class="headerlink" title="停用其他WEB服务"></a>停用其他WEB服务</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get remove nginx nginx-common	 	#卸载删除除了配置文件以外的所有文件。</span><br><span class="line">sudo apt-get purge nginx nginx-common       #卸载所有东东，包括删除配置文件。</span><br><span class="line">sudo apt-get autoremove					    #在上面命令结束后执行，主要是卸载删除Nginx的不再被使用的依赖包。</span><br><span class="line">sudo apt-get remove nginx-full nginx-common #卸载删除两个主要的包。</span><br><span class="line">sudo apt-get remove apache2 				#APACHE也一样的.</span><br></pre></td></tr></table></figure>
-<h2 id="安装与配置个人版CADDY"><a href="#安装与配置个人版CADDY" class="headerlink" title="安装与配置个人版CADDY"></a>安装与配置个人版CADDY</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl https://getcaddy.com | bash -s personal</span><br></pre></td></tr></table></figure>
-<p>在网站也可以下载其他版本的.<a href="https://caddyserver.com" target="_blank" rel="noopener">https://caddyserver.com</a></p>
-<h3 id="生产环境"><a href="#生产环境" class="headerlink" title="生产环境"></a>生产环境</h3><p>本身Caddy是没有固定文件夹的.可以随意在任何位置配置网站.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir /etc/caddy                  #为了记忆方便还是放在ETC下.</span><br><span class="line">sudo mkdir -p /var/www/localhost       #当然VAR三W方便.</span><br><span class="line"></span><br><span class="line">sudo chown -R root:www-data /etc/caddy</span><br></pre></td></tr></table></figure></p>
-<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/caddy/Caddyfile</span><br><span class="line"></span><br><span class="line">:80 localhost:80 &#123;</span><br><span class="line">    root /var/www/localhost</span><br><span class="line">    gzip</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>监听本地80端口.文件地址.开启GZIP.比起NGINX来.它的配置简单很多.</p>
-<h2 id="命令行运行caddy"><a href="#命令行运行caddy" class="headerlink" title="命令行运行caddy"></a>命令行运行caddy</h2><p>没了…就这么简单粗暴…</p>
-<h1 id="重点是这鬼玩意居然报错-不搞了"><a href="#重点是这鬼玩意居然报错-不搞了" class="headerlink" title="重点是这鬼玩意居然报错.不搞了"></a>重点是这鬼玩意居然报错.不搞了</h1><p>sudo rm -rf /etc/caddy</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-certbot" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/cje8b4vkl0001rgd8ejigtmzh/">树莓派安装Let&#39;s Encrypt SSL证书</a>
-    </h1>
-  
-
-        
-        <a href="/2018/02/cje8b4vkl0001rgd8ejigtmzh/" class="archive-article-date">
-  	<time datetime="2018-02-27T02:35:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>为了给梯子升级.需要加入TLS传输层安全协议.就有了如下的一篇文章.</p>
-<h2 id="Let’s-Encrypt-简介"><a href="#Let’s-Encrypt-简介" class="headerlink" title="Let’s Encrypt 简介"></a>Let’s Encrypt 简介</h2><p>如果要启用HTTPS.我们就需要从证书授权机构(以下简称CA) 处获取一个证书.Let’s Encrypt 就是一个 CA.我们可以从 Let’s Encrypt 获得网站域名的免费的证书.</p>
-<h2 id="Certbot-简介"><a href="#Certbot-简介" class="headerlink" title="Certbot 简介"></a>Certbot 简介</h2><p>Certbot 是Let’s Encrypt官方推荐的获取证书的客户端.可以帮我们获取免费的Let’s Encrypt 证书.Certbot 是支持所有 Lunix 内核的操作系统的.这里系统是UBUNTU16.04 硬件是 树莓派3.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/certbot/certbot</span><br></pre></td></tr></table></figure></p>
-<h3 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h3><ul>
-<li>一级域名哪申请的哪解析.绑定IP</li>
-<li>二级域名可以直接使用DNS方式申请证书.这里不讲了.我也用不上</li>
-<li><a href="https://doub.io/dbwz-3/" target="_blank" rel="noopener">教你申请.tk/.ml/.cf/.gq/.ga等免费域名</a><h3 id="用CERTBOT申请证书"><a href="#用CERTBOT申请证书" class="headerlink" title="用CERTBOT申请证书"></a>用CERTBOT申请证书</h3><h4 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h4>升级系统.安装PPA.添加安装包到仓库.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install software-properties-common</span><br><span class="line">sudo add-apt-repository ppa:certbot/certbot</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install python-certbot-nginx</span><br></pre></td></tr></table></figure>
-</li>
+        <h5 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h5><p>这个坑到现在还在困扰着我.简单来讲就是这东西就是一个钥匙.一捅.开了.<br>捅不开就被服务器拒绝了.有很多提高安全的方式.比如</p>
+<ul>
+<li>更改SSH端口号.</li>
+<li>禁止密码登录.</li>
+<li>禁止ROOT登录.</li>
 </ul>
-<h4 id="使用nginx插件获取证书"><a href="#使用nginx插件获取证书" class="headerlink" title="使用nginx插件获取证书"></a>使用nginx插件获取证书</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo certbot --nginx</span><br></pre></td></tr></table></figure>
-<p>这种方式会更改Nginx的配置.之前用ACME.SH一直出错.那种是不更改配置的快速部署方式.反正我又没配置什么.加上也是闲置域名.就无所谓改配置的问题了.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo certbot --nginx certonly</span><br></pre></td></tr></table></figure>
-<p>这个是手动模式.开发者文档.所以没事别用这个了.<a href="https://certbot.eff.org/docs" target="_blank" rel="noopener">To learn more about how to use Certbot read our documentation</a></p>
-<h4 id="自动更新"><a href="#自动更新" class="headerlink" title="自动更新"></a>自动更新</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo certbot renew --dry-run</span><br><span class="line">#添加CRONTAB定时任务.每隔2个月的凌晨2点15分运行一次.注意ROOT权限</span><br><span class="line">15 2 * */2 * certbot renew --pre-hook &quot;service nginx stop&quot; --post-hook &quot;service nginx start&quot;</span><br></pre></td></tr></table></figure>
-<p>这个命令是给快到90天的证书续约的.证书地址 /etc/letsencrypt/live/DOMAIN/fullchain.pem  and /etc/letsencrypt/live/DOMAIN/privkey.pem</p>
-<h4 id="验证证书"><a href="#验证证书" class="headerlink" title="验证证书"></a>验证证书</h4><p><a href="https://www.ssllabs.com/ssltest/index.html" target="_blank" rel="noopener">To learn more about how to use Certbot read our documentation</a><br>查验证书的信息.证书有效期是从 2018 年 2 月 27 号到 2018 年的 4 月 26 号.密钥是 RSA 2048 bits.证书签发机构是 Let’s Encrypt Authority X3 .Trusted 为 Yes 表明我这个证书可信.</p>
+<p>别相信那些大的VPS提供商.国内最大的云.我开了防火墙.130多次就试出来密码了…8位大小写混合密码啊!!!</p>
+<p>SSH之所以能够保证安全.原因在于它采用了公钥加密.整个过程是这样的：</p>
+<ul>
+<li>远程主机收到用户的登录请求.把自己的公钥发给用户.</li>
+<li>用户使用这个公钥.将登录密码加密后.发送回来.</li>
+<li>远程主机用自己的私钥.解密登录密码.如果密码正确.就同意用户登录.</li>
+</ul>
+<h3 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h3><ul>
+<li>Windows（SecureCRT / Xshell / Putty） </li>
+<li>Linux （ssh）</li>
+<li>MAC (那个命令行叫啥来着)</li>
+</ul>
+<a id="more"></a>
+<h3 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">如果你是第一次通过ssh登录远程主机，会出现下面的提示：</span><br><span class="line">ssh user@host</span><br><span class="line">The authenticity of host <span class="string">'host (120.18.49.21)'</span> can<span class="string">'t be established.</span></span><br><span class="line"><span class="string">RSA key fingerprint is RSA key.</span></span><br><span class="line"><span class="string">Are you sure you want to continue connecting (yes/no)?</span></span><br></pre></td></tr></table></figure>
+<p>这段话的意思是.无法确认host主机的真实性.只知道它的公钥指纹.问你还想继续连接吗？</p>
+<p>所谓”公钥指纹”.是指公钥长度较长（这里采用RSA算法，长达1024位）.所以对其进行MD5计算.将它变成一个128位的指纹.再进行比较.就容易多了.<br>很自然的一个问题就是.用户怎么知道远程主机的公钥指纹应该是多少？回答是：没有好的办法.远程主机必须在自己的网站上贴出公钥指纹.以便用户自行核对.</p>
+<h4 id="制作钥匙"><a href="#制作钥匙" class="headerlink" title="制作钥匙"></a>制作钥匙</h4><p>生成钥匙的命令都一样.后面带的命令没啥区别.反正个人用够了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa</span><br></pre></td></tr></table></figure></p>
+<p>回车<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/root/.ssh/id_rsa): <span class="comment">#&lt;== 按 Enter</span></span><br><span class="line">Created directory <span class="string">'/root/.ssh'</span>.</span><br><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase): <span class="comment">#&lt;== 输入密钥锁码，或直接按 Enter 留空</span></span><br><span class="line">Enter same passphrase again: <span class="comment">#&lt;== 再输入一遍密钥锁码</span></span><br><span class="line">Your identification has been saved <span class="keyword">in</span> /root/.ssh/id_rsa. <span class="comment">#&lt;== 私钥</span></span><br><span class="line">Your public key has been saved <span class="keyword">in</span> /root/.ssh/id_rsa.pub. <span class="comment">#&lt;== 公钥</span></span><br><span class="line">The key fingerprint is: null</span><br><span class="line">root@host</span><br></pre></td></tr></table></figure></p>
+<p>私钥设置口令（passphrase）这个嘛…如果是被害妄想症….你就设一个呗.本来刚刚你就生成了一个256位的密码.（设置私钥口令的目的是防止私钥被盗用）.但是设置之后.利用私钥连接也需要输入密码.</p>
+<p>一般在$ROOT/.ssh/目录下.会生成两个文件：id_rsa.pub 公钥 和 id_rsa 私钥..ssh 目录的权限必须是 700.</p>
+<p>sshd 服务器端默认的公钥文件是根目录.ssh下的 authorized_keys 文件.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /.ssh <span class="comment">#进入目录</span></span><br><span class="line">cat id_rsa.pub &gt;&gt; authorized_keys <span class="comment">#钥匙给服务器</span></span><br><span class="line">chmod 700 ~/.ssh <span class="comment">#否则ssh服务器会拒绝登录。</span></span><br><span class="line">chmod 600 ~/.ssh/authorized_keys <span class="comment">#必须是600权限.否则ssh服务器会拒绝用户登陆。</span></span><br></pre></td></tr></table></figure>
+<p>经过以上两步之后.从此你再登录.就不需要输入密码了…此命令执行后.远程主机直接将用户的公钥保存在 ~/.ssh/authorized_keys 文件中</p>
+<h3 id="更改SSH-CONFIG文件提高安全性"><a href="#更改SSH-CONFIG文件提高安全性" class="headerlink" title="更改SSH CONFIG文件提高安全性"></a>更改SSH CONFIG文件提高安全性</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure>
+<p>我比较喜欢用NANO.跟记事本一样的软件.VI是一个神奇的编辑器.至今不会用.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">PermitRootLogin no  <span class="comment">#禁止root登录 </span></span><br><span class="line">RSAAuthentication yes  <span class="comment">#开启证书登录</span></span><br><span class="line">PubkeyAuthentication yes  <span class="comment">#开启证书登录</span></span><br><span class="line">AuthorizedKeysFile    .ssh/authorized_keys   <span class="comment">#证书地址</span></span><br><span class="line">PasswordAuthentication no   <span class="comment">#禁用密码登陆.测试好再用这个.自己吃亏多次 </span></span><br><span class="line">PermitEmptyPasswords no   <span class="comment">#禁止空密码登陆</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># 在确定你的公钥加入到authorzed_keys后重启sshd服务</span></span><br><span class="line">/etc/init.d/sshd restart</span><br></pre></td></tr></table></figure>
+<h3 id="下载私钥转换为-PuTTY-能使用的格式"><a href="#下载私钥转换为-PuTTY-能使用的格式" class="headerlink" title="下载私钥转换为 PuTTY 能使用的格式"></a>下载私钥转换为 PuTTY 能使用的格式</h3><p>用 WinSCP SFTP 等工具把私钥文件 id_rsa 下载回来.然后打开 PuTTYGen.Load私钥如果你刚才设置了密钥锁码.这时则需要输入.</p>
+<p>在 Key comment 中键入对密钥的说明信息.然后单击 Save private key 按钮即可将私钥文件存放为 PuTTY 能使用的PPK格式.</p>
+<p>当使用 PuTTY 登录时.在左侧的 Connection -&gt; SSH -&gt; Auth 中的 Private key file for authentication: 处选择你的私钥文件.登录过程中只需输入密钥锁密码.</p>
+<p>PS:</p>
+<ul>
+<li>出问题最多的地方就是钥匙地址.为了省事我喜欢用ROOT账户.如果是普通账户的话.SSH地址在~/用户名/.ssh</li>
+<li>PasswordAuthentication YES 小心别把自己关外面了.等登录的时候可以用密匙后.再改成NO.</li>
+</ul>
 
       
 
@@ -384,10 +279,82 @@
       
 
       
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yzeon.com/2017/12/cje8b4vky000argd88ef9qfj2/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2017/12/cje8b4vkx0009rgd8y9p586k2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          markdown
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/12/cje8b4vko0002rgd86554ss6v/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">接触LINUX并登录</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -407,455 +374,14 @@
 
 
 
-
-  
-    <article id="post-rsyslog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/cje8b4vl0000brgd80sx1p4cp/">日志</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/cje8b4vl0000brgd80sx1p4cp/" class="archive-article-date">
-  	<time datetime="2017-12-28T10:35:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>rsyslog<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---------------------/etc/rsyslog.conf-------------</span><br><span class="line">  /etc/rsyslog.conf    Configuration file for rsyslog.</span><br><span class="line"></span><br><span class="line">                       For more information see</span><br><span class="line">                       /usr/share/doc/rsyslog-doc/html/rsyslog_conf.html</span><br><span class="line"></span><br><span class="line">  Default logging rules can be found in /etc/rsyslog.d/50-default.conf</span><br></pre></td></tr></table></figure></p>
-        
-          <a class="article-more-a" href="/2017/12/cje8b4vl0000brgd80sx1p4cp/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-iptables" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/cje8b4vkp0003rgd8un38ndzt/">防火墙</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/cje8b4vkp0003rgd8un38ndzt/" class="archive-article-date">
-  	<time datetime="2017-12-28T09:35:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="iptables"><a href="#iptables" class="headerlink" title="iptables."></a>iptables.</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install iptables            # ubuntu</span><br><span class="line">service iptables  (start|stop|restart|status)</span><br></pre></td></tr></table></figure>
-<p>规则列表<br>iptables -L -n<br>清初列表<br>iptables -F<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">iptables -A INPUT -p tcp --dport 22 -j ACCEPT</span><br><span class="line">iptables -A INPUT -p tcp --dport 80 -j ACCEPT</span><br><span class="line">iptables -A INPUT -p tcp --dport 443 -j ACCEPT</span><br><span class="line">iptables -A INPUT -p tcp --dport 5830 -j ACCEPT</span><br><span class="line">iptables -A INPUT -p tcp --dport 14151 -j ACCEPT</span><br><span class="line">iptables -A INPUT -p tcp --dport 14152 -j ACCEPT</span><br><span class="line">iptables -A INPUT -p tcp --dport 14153 -j ACCEPT</span><br></pre></td></tr></table></figure></p>
-<p>#允许ping<br>iptables -A INPUT -p icmp -m icmp –icmp-type 8 -j ACCEPT</p>
-<p>#禁止其他未允许的规则访问<br>iptables -A INPUT -j REJECT  #（注意：如果22端口未加入允许规则，SSH链接会直接断开。）<br>iptables -A FORWARD -j REJECT</p>
-        
-          <a class="article-more-a" href="/2017/12/cje8b4vkp0003rgd8un38ndzt/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-lnmp" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/cje8b4vkt0006rgd8nqkiyv7m/">Lnmp</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/cje8b4vkt0006rgd8nqkiyv7m/" class="archive-article-date">
-  	<time datetime="2017-12-28T08:35:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1.1 安装Nginx</p>
-<p>$sudo apt-get install nginx</p>
-<p>配置在/etc/nginx下，每个虚拟主机已经安排在了/etc/nginx/sites-available下<br>程序在/usr/sbin/nginx</p>
-<p>日志在/var/log/nginx<br>并在/etc/init.d/下创建了启动脚本nginx</p>
-<p>默认的虚拟主机的目录设置在了/var/www/nginx-default (有的版本 默认的虚拟主机的目录设置在</p>
-<p>了/var/www, 请参考/etc/nginx/sites-available里的配置)</p>
-<p>$sudo /etc/init.d/nginx start</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-ssr" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/cje8b4vl2000crgd8aulmvy8w/">梯子软件</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/cje8b4vl2000crgd8aulmvy8w/" class="archive-article-date">
-  	<time datetime="2017-12-28T07:35:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>可以查看 ShadowsocksR 进程是否已经启动。<br>本脚本安装完成后，已将 ShadowsocksR 自动加入开机自启动。</p>
-<p>使用命令：<br>启动：/etc/init.d/shadowsocks start<br>停止：/etc/init.d/shadowsocks stop<br>重启：/etc/init.d/shadowsocks restart<br>状态：/etc/init.d/shadowsocks status</p>
-<p>配置文件路径：/etc/shadowsocks.json<br>日志文件路径：/var/log/shadowsocks.log<br>代码安装目录：/usr/local/shadowsocks    </p>
-<p>配置文件路径为 /etc/v2ray/config.json</p>
-<p>使用以下命令启动 V2Ray:<br>service v2ray  (start|stop|restart|status)</p>
-<p>98e89dcb-53c9-44aa-a70b-32549ea0b761</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-disk" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/cje8b4vkq0004rgd8p1yqllvn/">磁盘相关</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/cje8b4vkq0004rgd8p1yqllvn/" class="archive-article-date">
-  	<time datetime="2017-12-28T06:35:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cd /var/</span><br><span class="line">dd if=/dev/zero of=swapfile bs=1M count=2048  #获取1GB的文件块（一般设置为内存的2倍）</span><br><span class="line">/sbin/mkswap swapfile       #创建Swap文件</span><br><span class="line">/sbin/swapon swapfile       #激活Swap文件</span><br><span class="line">chmod 0644 /var/swapfile    #为了安全，建议修改一下权限</span><br><span class="line">echo &quot;/var/swapfile swap swap defaults 0 0&quot; &gt;&gt; /etc/fstab    #将swapfile添加到fstab文件中，开机自动启动</span><br><span class="line">free -m                     #搞定了。此时查看内存信息</span><br></pre></td></tr></table></figure>
-<p>出现 “Swap: 1023” 字样表示设置成功。</p>
-<p>CentOS 7上创建swap分区的步骤</p>
-        
-          <a class="article-more-a" href="/2017/12/cje8b4vkq0004rgd8p1yqllvn/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-lamp" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/cje8b4vku0007rgd844yy4xks/">Lamp</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/cje8b4vku0007rgd844yy4xks/" class="archive-article-date">
-  	<time datetime="2017-12-28T05:35:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>wget -b后台 -C断点续传<br>tail -f wget-log 查看日志</p>
-<p>apt-get install lamp-server^<br>mysql !Q….x</p>
-<p>apt-get install phpmyadmin<br>root !Q…..x</p>
-<p>ln -s /usr/share/phpmyadmin /var/www/html/</p>
-<p>删除链接rm -rf</p>
-        
-          <a class="article-more-a" href="/2017/12/cje8b4vku0007rgd844yy4xks/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hexo-github" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/cje8b4vks0005rgd88v7pmpb0/">github pages</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/cje8b4vks0005rgd88v7pmpb0/" class="archive-article-date">
-  	<time datetime="2017-12-28T04:35:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>ssh -T git@github.com</p>
-<h1 id="start-the-ssh-agent-in-the-background"><a href="#start-the-ssh-agent-in-the-background" class="headerlink" title="start the ssh-agent in the background"></a>start the ssh-agent in the background</h1><p>eval $(ssh-agent -s)<br>Agent pid 59566</p>
-<p>ssh-add ~/.ssh/id_rsa</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -878,8 +404,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

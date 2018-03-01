@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yzeon.com">
-  <title>github pages | YZ学习日志</title>
+  <title>搞定NGINX SSL了 | YZ学习日志</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ssh -T git@github.com start the ssh-agent in the backgroundeval $(ssh-agent -s)Agent pid 59566 ssh-add ~/.ssh/id_rsa">
+  <meta name="description" content="1并创建 一个 bash 的 alias, 方便你的使用: acme.sh=~/.acme.sh/acme.sh 之前问题出在ALIAS这里了.直接定义地址后.如果不给权限运行.还是会出错.所以别省事了.还是加上地址打命令吧1sudo ~/.acme.sh/acme.sh 参数 nginx的配置文件出错好多次.也不知道是什么机制.一直在调用默认文件DEFAULT.我已经在SITES-AVAILAB">
 <meta property="og:type" content="article">
-<meta property="og:title" content="github pages">
-<meta property="og:url" content="http://yzeon.com/2017/12/cje554hdw00021wd8qc7iuldm/index.html">
+<meta property="og:title" content="搞定NGINX SSL了">
+<meta property="og:url" content="http://yzeon.com/2018/03/cje8b4vkw0008rgd8d0hbdabk/index.html">
 <meta property="og:site_name" content="YZ学习日志">
-<meta property="og:description" content="ssh -T git@github.com start the ssh-agent in the backgroundeval $(ssh-agent -s)Agent pid 59566 ssh-add ~/.ssh/id_rsa">
+<meta property="og:description" content="1并创建 一个 bash 的 alias, 方便你的使用: acme.sh=~/.acme.sh/acme.sh 之前问题出在ALIAS这里了.直接定义地址后.如果不给权限运行.还是会出错.所以别省事了.还是加上地址打命令吧1sudo ~/.acme.sh/acme.sh 参数 nginx的配置文件出错好多次.也不知道是什么机制.一直在调用默认文件DEFAULT.我已经在SITES-AVAILAB">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-12-28T04:48:44.807Z">
+<meta property="og:updated_time" content="2018-03-01T09:28:11.620Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="github pages">
-<meta name="twitter:description" content="ssh -T git@github.com start the ssh-agent in the backgroundeval $(ssh-agent -s)Agent pid 59566 ssh-add ~/.ssh/id_rsa">
+<meta name="twitter:title" content="搞定NGINX SSL了">
+<meta name="twitter:description" content="1并创建 一个 bash 的 alias, 方便你的使用: acme.sh=~/.acme.sh/acme.sh 之前问题出在ALIAS这里了.直接定义地址后.如果不给权限运行.还是会出错.所以别省事了.还是加上地址打命令吧1sudo ~/.acme.sh/acme.sh 参数 nginx的配置文件出错好多次.也不知道是什么机制.一直在调用默认文件DEFAULT.我已经在SITES-AVAILAB">
   
     <link rel="alternative" href="/atom.xml" title="YZ学习日志" type="application/atom+xml">
   
@@ -206,29 +206,43 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-hexo-github" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-ws-v2-nginx" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      github pages
+      搞定NGINX SSL了
     </h1>
   
 
         
-        <a href="/2017/12/cje554hdw00021wd8qc7iuldm/" class="archive-article-date">
-  	<time datetime="2017-12-28T04:35:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-28</time>
+        <a href="/2018/03/cje8b4vkw0008rgd8d0hbdabk/" class="archive-article-date">
+  	<time datetime="2018-03-01T06:35:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>ssh -T git@github.com</p>
-<h1 id="start-the-ssh-agent-in-the-background"><a href="#start-the-ssh-agent-in-the-background" class="headerlink" title="start the ssh-agent in the background"></a>start the ssh-agent in the background</h1><p>eval $(ssh-agent -s)<br>Agent pid 59566</p>
-<p>ssh-add ~/.ssh/id_rsa</p>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">并创建 一个 bash 的 alias, 方便你的使用: acme.sh=~/.acme.sh/acme.sh</span><br></pre></td></tr></table></figure>
+<p>之前问题出在ALIAS这里了.直接定义地址后.如果不给权限运行.还是会出错.<br>所以别省事了.还是加上地址打命令吧<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ~/.acme.sh/acme.sh 参数</span><br></pre></td></tr></table></figure></p>
+<p>nginx的配置文件出错好多次.也不知道是什么机制.一直在调用默认文件DEFAULT.<br>我已经在SITES-AVAILABLE中建立新的配置文件.并且建立连接去ENABLE中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp /etc/nginx/sites-available/XXX.COM /etc/nginx/sites-enable/XXX.COM</span><br></pre></td></tr></table></figure></p>
+<p>后来我直接删了default文件.多省事.</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[2018年 03月 01日 星期四 11:52:36 CST] Your cert is in  /home/user/.acme.sh/XXX.com/XXX.com.cer</span><br><span class="line">[2018年 03月 01日 星期四 11:52:36 CST] Your cert key is in  /home/user/.acme.sh/XXX.com/XXX.com.key</span><br><span class="line">[2018年 03月 01日 星期四 11:52:37 CST] The intermediate CA cert is in  /home/user/.acme.sh/XXX.com/ca.cer</span><br><span class="line">[2018年 03月 01日 星期四 11:52:37 CST] And the full chain certs is there:  /home/user/.acme.sh/XXX.com/fullchain.cer</span><br><span class="line">#上面是成功后给的地址</span><br><span class="line">sudo ~/.acme.sh/acme.sh --installcert -d XXX.com --fullchainpath /etc/v2ray/v2ray.crt --keypath /etc/v2ray/v2ray.key --ecc  #ecc 证书 失败</span><br><span class="line">sudo ~/.acme.sh/acme.sh --installcert -d XXX.com --fullchainpath /etc/v2ray/v2ray.crt --keypath /etc/v2ray/v2ray.key        #RSA 证书 OK</span><br><span class="line"></span><br><span class="line">sudo ~/.acme.sh/acme.sh \</span><br><span class="line"> --installcert  -d  XXX.com  \</span><br><span class="line"> --key-file   /etc/nginx/ssl/XXX.com.key  \</span><br><span class="line"> --fullchain-file /etc/nginx/ssl/fullchain.cer  \</span><br><span class="line"> --reloadcmd  &quot;service nginx force-reload&quot;</span><br></pre></td></tr></table></figure>
+<p>本来要做这个证书导入的.后来直接在NGINX里指定了证书地址.<br>搞定后再去配置NGINX的网站信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">listen 443 ssl;         #开启443 SSL</span><br><span class="line">listen [::]:443 ssl;</span><br><span class="line"></span><br><span class="line">return 301 https://XXX.com$request_uri;   #重新定向HTTPS.但是我这边出错.就删了</span><br><span class="line"></span><br><span class="line">ssl_certificate     /etc/nginx/ssl/fullchain.cer;     #证书地址.不过我给定义在V2RAY里了</span><br><span class="line">ssl_certificate_key /etc/nginx/ssl/XXX.com.key;</span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line">  listen  443 ssl;</span><br><span class="line">  ssl on;</span><br><span class="line">  ssl_certificate       /etc/v2ray/v2ray.crt;</span><br><span class="line">  ssl_certificate_key   /etc/v2ray/v2ray.key;</span><br><span class="line">  ssl_protocols         TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">  ssl_ciphers           HIGH:!aNULL:!MD5;</span><br><span class="line">  server_name           mydomain.me;</span><br><span class="line">        location /ray &#123;</span><br><span class="line">        proxy_redirect off;</span><br><span class="line">        proxy_pass http://127.0.0.1:14151;</span><br><span class="line">        proxy_http_version 1.1;</span><br><span class="line">        proxy_set_header Upgrade $http_upgrade;</span><br><span class="line">        proxy_set_header Connection &quot;upgrade&quot;;</span><br><span class="line">        proxy_set_header Host $http_host;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>开个定时任务.搞定收工.没事就别管了…真的好容易报错<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">crontab -l</span><br><span class="line">0 0 * * * &quot;/home/ubuntu/.acme.sh&quot;/acme.sh --cron --home &quot;/home/ubuntu/.acme.sh&quot; &gt; /dev/null</span><br></pre></td></tr></table></figure></p>
+<p>#最后走一下流程看看能否正确执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ~/.acme.sh/acme.sh --cron</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>一些注意事项<ul>
+<li>ssl_dhparam 未配置，将导致 ssllabs.com 的评分降到 B，并给 This server supports weak Diffie-Hellman (DH) key exchange parameters. Grade capped to B. 的警告。</li>
+<li>ssl_prefer_server_ciphers on 也是一个必要的配置，否则会 A+ 变成 A-;</li>
+<li>如果你需要兼容老系统或老浏览器的话，你需要配置 ssl_ciphers，详见 Mozilla Server_Side_TLS 的介绍，Nginx 里面 ssl_ciphers 默认值是 HIGH:!aNULL:!MD5; ref</li>
+</ul>
+</li>
+</ul>
 
       
 
@@ -287,7 +301,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yzeon.com/2017/12/cje554hdw00021wd8qc7iuldm/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yzeon.com/2018/03/cje8b4vkw0008rgd8d0hbdabk/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -301,18 +315,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/12/cje554he100051wd8z2h947r9/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Lamp
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/12/cje554he400071wd8ilzf1lsl/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">markdown</div>
+    <a href="/2018/02/cje8b4vke0000rgd83fctv292/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Caddy安装和配置</div>
       <i class="icon-circle-right"></i>
     </a>
   
