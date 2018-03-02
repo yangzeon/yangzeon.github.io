@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yzeon.com">
-  <title>搞定NGINX SSL了 | YZ学习日志</title>
+  <title>磁盘相关 | YZ学习日志</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1并创建 一个 bash 的 alias, 方便你的使用: acme.sh=~/.acme.sh/acme.sh 之前问题出在ALIAS这里了.直接定义地址后.如果不给权限运行.还是会出错.所以别省事了.还是加上地址打命令吧1sudo ~/.acme.sh/acme.sh 参数 nginx的配置文件出错好多次.也不知道是什么机制.一直在调用默认文件DEFAULT.我已经在SITES-AVAILAB">
+  <meta name="description" content="1234567cd /var/dd if=/dev/zero of=swapfile bs=1M count=2048  #获取1GB的文件块（一般设置为内存的2倍）/sbin/mkswap swapfile       #创建Swap文件/sbin/swapon swapfile       #激活Swap文件chmod 0644 /var/swapfile    #为了安全，建议修改一下权限e">
 <meta property="og:type" content="article">
-<meta property="og:title" content="搞定NGINX SSL了">
-<meta property="og:url" content="http://yzeon.com/2018/03/cje8b4vkw0008rgd8d0hbdabk/index.html">
+<meta property="og:title" content="磁盘相关">
+<meta property="og:url" content="http://yzeon.com/2017/12/cje9mxerz0004ccd870yxl93p/index.html">
 <meta property="og:site_name" content="YZ学习日志">
-<meta property="og:description" content="1并创建 一个 bash 的 alias, 方便你的使用: acme.sh=~/.acme.sh/acme.sh 之前问题出在ALIAS这里了.直接定义地址后.如果不给权限运行.还是会出错.所以别省事了.还是加上地址打命令吧1sudo ~/.acme.sh/acme.sh 参数 nginx的配置文件出错好多次.也不知道是什么机制.一直在调用默认文件DEFAULT.我已经在SITES-AVAILAB">
+<meta property="og:description" content="1234567cd /var/dd if=/dev/zero of=swapfile bs=1M count=2048  #获取1GB的文件块（一般设置为内存的2倍）/sbin/mkswap swapfile       #创建Swap文件/sbin/swapon swapfile       #激活Swap文件chmod 0644 /var/swapfile    #为了安全，建议修改一下权限e">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-01T09:28:11.620Z">
+<meta property="og:updated_time" content="2018-02-27T04:14:35.576Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="搞定NGINX SSL了">
-<meta name="twitter:description" content="1并创建 一个 bash 的 alias, 方便你的使用: acme.sh=~/.acme.sh/acme.sh 之前问题出在ALIAS这里了.直接定义地址后.如果不给权限运行.还是会出错.所以别省事了.还是加上地址打命令吧1sudo ~/.acme.sh/acme.sh 参数 nginx的配置文件出错好多次.也不知道是什么机制.一直在调用默认文件DEFAULT.我已经在SITES-AVAILAB">
+<meta name="twitter:title" content="磁盘相关">
+<meta name="twitter:description" content="1234567cd /var/dd if=/dev/zero of=swapfile bs=1M count=2048  #获取1GB的文件块（一般设置为内存的2倍）/sbin/mkswap swapfile       #创建Swap文件/sbin/swapon swapfile       #激活Swap文件chmod 0644 /var/swapfile    #为了安全，建议修改一下权限e">
   
     <link rel="alternative" href="/atom.xml" title="YZ学习日志" type="application/atom+xml">
   
@@ -206,43 +206,40 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-ws-v2-nginx" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-disk" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      搞定NGINX SSL了
+      磁盘相关
     </h1>
   
 
         
-        <a href="/2018/03/cje8b4vkw0008rgd8d0hbdabk/" class="archive-article-date">
-  	<time datetime="2018-03-01T06:35:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-01</time>
+        <a href="/2017/12/cje9mxerz0004ccd870yxl93p/" class="archive-article-date">
+  	<time datetime="2017-12-28T06:35:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-28</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">并创建 一个 bash 的 alias, 方便你的使用: acme.sh=~/.acme.sh/acme.sh</span><br></pre></td></tr></table></figure>
-<p>之前问题出在ALIAS这里了.直接定义地址后.如果不给权限运行.还是会出错.<br>所以别省事了.还是加上地址打命令吧<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ~/.acme.sh/acme.sh 参数</span><br></pre></td></tr></table></figure></p>
-<p>nginx的配置文件出错好多次.也不知道是什么机制.一直在调用默认文件DEFAULT.<br>我已经在SITES-AVAILABLE中建立新的配置文件.并且建立连接去ENABLE中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp /etc/nginx/sites-available/XXX.COM /etc/nginx/sites-enable/XXX.COM</span><br></pre></td></tr></table></figure></p>
-<p>后来我直接删了default文件.多省事.</p>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cd /var/</span><br><span class="line">dd if=/dev/zero of=swapfile bs=1M count=2048  #获取1GB的文件块（一般设置为内存的2倍）</span><br><span class="line">/sbin/mkswap swapfile       #创建Swap文件</span><br><span class="line">/sbin/swapon swapfile       #激活Swap文件</span><br><span class="line">chmod 0644 /var/swapfile    #为了安全，建议修改一下权限</span><br><span class="line">echo &quot;/var/swapfile swap swap defaults 0 0&quot; &gt;&gt; /etc/fstab    #将swapfile添加到fstab文件中，开机自动启动</span><br><span class="line">free -m                     #搞定了。此时查看内存信息</span><br></pre></td></tr></table></figure>
+<p>出现 “Swap: 1023” 字样表示设置成功。</p>
+<p>CentOS 7上创建swap分区的步骤</p>
 <a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[2018年 03月 01日 星期四 11:52:36 CST] Your cert is in  /home/user/.acme.sh/XXX.com/XXX.com.cer</span><br><span class="line">[2018年 03月 01日 星期四 11:52:36 CST] Your cert key is in  /home/user/.acme.sh/XXX.com/XXX.com.key</span><br><span class="line">[2018年 03月 01日 星期四 11:52:37 CST] The intermediate CA cert is in  /home/user/.acme.sh/XXX.com/ca.cer</span><br><span class="line">[2018年 03月 01日 星期四 11:52:37 CST] And the full chain certs is there:  /home/user/.acme.sh/XXX.com/fullchain.cer</span><br><span class="line">#上面是成功后给的地址</span><br><span class="line">sudo ~/.acme.sh/acme.sh --installcert -d XXX.com --fullchainpath /etc/v2ray/v2ray.crt --keypath /etc/v2ray/v2ray.key --ecc  #ecc 证书 失败</span><br><span class="line">sudo ~/.acme.sh/acme.sh --installcert -d XXX.com --fullchainpath /etc/v2ray/v2ray.crt --keypath /etc/v2ray/v2ray.key        #RSA 证书 OK</span><br><span class="line"></span><br><span class="line">sudo ~/.acme.sh/acme.sh \</span><br><span class="line"> --installcert  -d  XXX.com  \</span><br><span class="line"> --key-file   /etc/nginx/ssl/XXX.com.key  \</span><br><span class="line"> --fullchain-file /etc/nginx/ssl/fullchain.cer  \</span><br><span class="line"> --reloadcmd  &quot;service nginx force-reload&quot;</span><br></pre></td></tr></table></figure>
-<p>本来要做这个证书导入的.后来直接在NGINX里指定了证书地址.<br>搞定后再去配置NGINX的网站信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">listen 443 ssl;         #开启443 SSL</span><br><span class="line">listen [::]:443 ssl;</span><br><span class="line"></span><br><span class="line">return 301 https://XXX.com$request_uri;   #重新定向HTTPS.但是我这边出错.就删了</span><br><span class="line"></span><br><span class="line">ssl_certificate     /etc/nginx/ssl/fullchain.cer;     #证书地址.不过我给定义在V2RAY里了</span><br><span class="line">ssl_certificate_key /etc/nginx/ssl/XXX.com.key;</span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line">  listen  443 ssl;</span><br><span class="line">  ssl on;</span><br><span class="line">  ssl_certificate       /etc/v2ray/v2ray.crt;</span><br><span class="line">  ssl_certificate_key   /etc/v2ray/v2ray.key;</span><br><span class="line">  ssl_protocols         TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">  ssl_ciphers           HIGH:!aNULL:!MD5;</span><br><span class="line">  server_name           mydomain.me;</span><br><span class="line">        location /ray &#123;</span><br><span class="line">        proxy_redirect off;</span><br><span class="line">        proxy_pass http://127.0.0.1:14151;</span><br><span class="line">        proxy_http_version 1.1;</span><br><span class="line">        proxy_set_header Upgrade $http_upgrade;</span><br><span class="line">        proxy_set_header Connection &quot;upgrade&quot;;</span><br><span class="line">        proxy_set_header Host $http_host;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>开个定时任务.搞定收工.没事就别管了…真的好容易报错<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">crontab -l</span><br><span class="line">0 0 * * * &quot;/home/ubuntu/.acme.sh&quot;/acme.sh --cron --home &quot;/home/ubuntu/.acme.sh&quot; &gt; /dev/null</span><br></pre></td></tr></table></figure></p>
-<p>#最后走一下流程看看能否正确执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ~/.acme.sh/acme.sh --cron</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li>一些注意事项<ul>
-<li>ssl_dhparam 未配置，将导致 ssllabs.com 的评分降到 B，并给 This server supports weak Diffie-Hellman (DH) key exchange parameters. Grade capped to B. 的警告。</li>
-<li>ssl_prefer_server_ciphers on 也是一个必要的配置，否则会 A+ 变成 A-;</li>
-<li>如果你需要兼容老系统或老浏览器的话，你需要配置 ssl_ciphers，详见 Mozilla Server_Side_TLS 的介绍，Nginx 里面 ssl_ciphers 默认值是 HIGH:!aNULL:!MD5; ref</li>
-</ul>
-</li>
-</ul>
+<p>：<br>①使用dd命令创建一个swap分区</p>
+<p>dd if=/dev/zero of=/home/swap bs=1024 count=1048576<br>count的值是：size（多少M）* 1024，我这里设置的1G虚拟内存，也就是count=1024000.<br>②格式化swap分区</p>
+<p>mkswap /home/swap<br>③把格式化后的文件分区设置为swap分区<br>swapon /home/swap<br>（关闭SWAP分区命令为：[root@localhost Desktop]#swapoff /home/swap）<br>此时，swap分区已经创建好了，使用free命令查看，可见多了一个挂载分区。<br>④swap分区自动挂载<br>vi /etc/fstab<br>在文件末尾加上<br>/home/swap swap swap default 0 0</p>
+<ol>
+<li>查看磁盘空间使用情况：df -h</li>
+<li>进入空间占用最多的目录：cd /</li>
+<li>使用命令 ： du -sh  *   查看根目录下每个文件夹的大小</li>
+<li>进入占用空间比较大的文件夹，然后再使用步骤2,3中命令查找大文件的方法依次查找。</li>
+</ol>
+<p>常用命令<br>查找大文件：find / -type f -size +10G<br>文件大小排序：ls -lhS 或者 du -h * | sort -n</p>
 
       
 
@@ -301,7 +298,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yzeon.com/2018/03/cje8b4vkw0008rgd8d0hbdabk/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yzeon.com/2017/12/cje9mxerz0004ccd870yxl93p/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -315,9 +312,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2017/12/cje9mxese000accd895hxpiq9/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          梯子软件
+        
+      </div>
+    </a>
   
-    <a href="/2018/02/cje8b4vke0000rgd83fctv292/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Caddy安装和配置</div>
+  
+    <a href="/2017/12/cje9mxesa0008ccd8d77qgzsy/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Lamp</div>
       <i class="icon-circle-right"></i>
     </a>
   

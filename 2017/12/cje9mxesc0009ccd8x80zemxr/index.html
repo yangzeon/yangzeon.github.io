@@ -6,22 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yzeon.com">
-  <title>markdown | YZ学习日志</title>
+  <title>使用ssh登录 | YZ学习日志</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="README该文件用来测试和展示书写README的各种markdown语法。GitHub的markdown语法在标准的markdown语法基础上做了扩充，称之为GitHub Flavored Markdown。简称GFM，GFM在GitHub上有广泛应用，除了README文件外，issues和wiki均支持markdown语法。     Author 果冻虾仁     E-mail Jelly.K">
+  <meta name="description" content="SSH这个坑到现在还在困扰着我.简单来讲就是这东西就是一个钥匙.一捅.开了.捅不开就被服务器拒绝了.有很多提高安全的方式.比如  更改SSH端口号. 禁止密码登录. 禁止ROOT登录.  别相信那些大的VPS提供商.国内最大的云.我开了防火墙.130多次就试出来密码了…8位大小写混合密码啊!!! SSH之所以能够保证安全.原因在于它采用了公钥加密.整个过程是这样的：  远程主机收到用户的登录请求.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="markdown">
-<meta property="og:url" content="http://yzeon.com/2017/12/cje8b4vkx0009rgd8y9p586k2/index.html">
+<meta property="og:title" content="使用ssh登录">
+<meta property="og:url" content="http://yzeon.com/2017/12/cje9mxesc0009ccd8x80zemxr/index.html">
 <meta property="og:site_name" content="YZ学习日志">
-<meta property="og:description" content="README该文件用来测试和展示书写README的各种markdown语法。GitHub的markdown语法在标准的markdown语法基础上做了扩充，称之为GitHub Flavored Markdown。简称GFM，GFM在GitHub上有广泛应用，除了README文件外，issues和wiki均支持markdown语法。     Author 果冻虾仁     E-mail Jelly.K">
+<meta property="og:description" content="SSH这个坑到现在还在困扰着我.简单来讲就是这东西就是一个钥匙.一捅.开了.捅不开就被服务器拒绝了.有很多提高安全的方式.比如  更改SSH端口号. 禁止密码登录. 禁止ROOT登录.  别相信那些大的VPS提供商.国内最大的云.我开了防火墙.130多次就试出来密码了…8位大小写混合密码啊!!! SSH之所以能够保证安全.原因在于它采用了公钥加密.整个过程是这样的：  远程主机收到用户的登录请求.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://www.baidu.com/img/bdlogo.gif">
-<meta property="og:image" content="http://yzeon.com/img/zhihu.png">
-<meta property="og:updated_time" content="2018-02-27T04:04:22.289Z">
+<meta property="og:updated_time" content="2018-02-27T03:52:38.240Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="markdown">
-<meta name="twitter:description" content="README该文件用来测试和展示书写README的各种markdown语法。GitHub的markdown语法在标准的markdown语法基础上做了扩充，称之为GitHub Flavored Markdown。简称GFM，GFM在GitHub上有广泛应用，除了README文件外，issues和wiki均支持markdown语法。     Author 果冻虾仁     E-mail Jelly.K">
-<meta name="twitter:image" content="http://www.baidu.com/img/bdlogo.gif">
+<meta name="twitter:title" content="使用ssh登录">
+<meta name="twitter:description" content="SSH这个坑到现在还在困扰着我.简单来讲就是这东西就是一个钥匙.一捅.开了.捅不开就被服务器拒绝了.有很多提高安全的方式.比如  更改SSH端口号. 禁止密码登录. 禁止ROOT登录.  别相信那些大的VPS提供商.国内最大的云.我开了防火墙.130多次就试出来密码了…8位大小写混合密码啊!!! SSH之所以能够保证安全.原因在于它采用了公钥加密.整个过程是这样的：  远程主机收到用户的登录请求.">
   
     <link rel="alternative" href="/atom.xml" title="YZ学习日志" type="application/atom+xml">
   
@@ -209,463 +206,66 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-markdown" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-ssh-login" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      markdown
+      使用ssh登录
     </h1>
   
 
         
-        <a href="/2017/12/cje8b4vkx0009rgd8y9p586k2/" class="archive-article-date">
-  	<time datetime="2017-12-28T03:35:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-28</time>
+        <a href="/2017/12/cje9mxesc0009ccd8x80zemxr/" class="archive-article-date">
+  	<time datetime="2017-12-27T08:47:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="README"><a href="#README" class="headerlink" title="README"></a>README</h1><p>该文件用来测试和展示书写README的各种markdown语法。GitHub的markdown语法在标准的markdown语法基础上做了扩充，称之为<code>GitHub Flavored Markdown</code>。简称<code>GFM</code>，GFM在GitHub上有广泛应用，除了README文件外，issues和wiki均支持markdown语法。</p>
-<hr>
-<table>
-<thead>
-<tr>
-<th>Author</th>
-<th>果冻虾仁</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>E-mail</td>
-<td>Jelly.K.Wang@qq.com</td>
-</tr>
-</tbody>
-</table>
-<p>#常用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 一级标题  </span><br><span class="line">## 二级标题  </span><br><span class="line">### 三级标题  </span><br><span class="line">#### 四级标题  </span><br><span class="line">##### 五级标题  </span><br><span class="line">###### 六级标题</span><br><span class="line">* [文本](URL)</span><br><span class="line">    * 普通文本</span><br><span class="line">    * 单行文本</span><br><span class="line">头尾用3个`写代码</span><br></pre></td></tr></table></figure></p>
+        <h5 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h5><p>这个坑到现在还在困扰着我.简单来讲就是这东西就是一个钥匙.一捅.开了.<br>捅不开就被服务器拒绝了.有很多提高安全的方式.比如</p>
+<ul>
+<li>更改SSH端口号.</li>
+<li>禁止密码登录.</li>
+<li>禁止ROOT登录.</li>
+</ul>
+<p>别相信那些大的VPS提供商.国内最大的云.我开了防火墙.130多次就试出来密码了…8位大小写混合密码啊!!!</p>
+<p>SSH之所以能够保证安全.原因在于它采用了公钥加密.整个过程是这样的：</p>
+<ul>
+<li>远程主机收到用户的登录请求.把自己的公钥发给用户.</li>
+<li>用户使用这个公钥.将登录密码加密后.发送回来.</li>
+<li>远程主机用自己的私钥.解密登录密码.如果密码正确.就同意用户登录.</li>
+</ul>
+<h3 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h3><ul>
+<li>Windows（SecureCRT / Xshell / Putty） </li>
+<li>Linux （ssh）</li>
+<li>MAC (那个命令行叫啥来着)</li>
+</ul>
 <a id="more"></a>
-<hr>
-<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
-<li><a href="#横线">横线</a></li>
-<li><a href="#标题">标题</a></li>
-<li><a href="#文本">文本</a><ul>
-<li>普通文本</li>
-<li>单行文本</li>
-<li>多行文本</li>
-<li>文字高亮</li>
-<li>换行</li>
-<li>斜体</li>
-<li>粗体</li>
-<li>删除线</li>
-</ul>
-</li>
-<li><a href="#图片">图片</a><ul>
-<li>来源于网络的图片</li>
-<li>GitHub仓库中的图片</li>
-</ul>
-</li>
-<li><a href="#链接">链接</a> <ul>
-<li>文字超链接<ul>
-<li>链接外部URL</li>
-<li>链接本仓库里的URL</li>
-</ul>
-</li>
-<li>锚点</li>
-<li><a href="#图片链接">图片链接</a></li>
-</ul>
-</li>
-<li><a href="#列表">列表</a><ul>
-<li>无序列表</li>
-<li>有序列表</li>
-<li>复选框列表</li>
-</ul>
-</li>
-<li><a href="#块引用">块引用</a></li>
-<li><a href="#代码高亮">代码高亮</a></li>
-<li><a href="#表格">表格</a> </li>
-<li><a href="#表情">表情</a></li>
-<li><a href="#diff语法">diff语法</a></li>
-</ul>
-<h3 id="横线"><a href="#横线" class="headerlink" title="横线"></a>横线</h3><hr>
-<p><em>*</em>、—、___可以显示横线效果</p>
-<h2 id=""><a href="#" class="headerlink" title="*"></a><em>*</em></h2><hr>
-<h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><h2 id="文本"><a href="#文本" class="headerlink" title="文本"></a>文本</h2><h3 id="普通文本"><a href="#普通文本" class="headerlink" title="普通文本"></a>普通文本</h3><p>这是一段普通的文本</p>
-<h3 id="单行文本"><a href="#单行文本" class="headerlink" title="单行文本"></a>单行文本</h3><pre><code>Hello,大家好，我是果冻虾仁。
-</code></pre><p>在一行开头加入1个Tab或者4个空格。</p>
-<h3 id="文本块"><a href="#文本块" class="headerlink" title="文本块"></a>文本块</h3><h4 id="语法1"><a href="#语法1" class="headerlink" title="语法1"></a>语法1</h4><p>在连续几行的文本开头加入1个Tab或者4个空格。</p>
-<pre><code>欢迎到访
-很高兴见到您
-祝您，早上好，中午好，下午好，晚安
-</code></pre><h4 id="语法2"><a href="#语法2" class="headerlink" title="语法2"></a>语法2</h4><p>使用一对各三个的反引号：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">欢迎到访</span><br><span class="line">我是C++码农</span><br><span class="line">你可以在知乎、CSDN、简书搜索【果冻虾仁】找到我</span><br></pre></td></tr></table></figure></p>
-<p>该语法也可以实现代码高亮，见<a href="#代码高亮">代码高亮</a></p>
-<h3 id="文字高亮"><a href="#文字高亮" class="headerlink" title="文字高亮"></a>文字高亮</h3><p>文字高亮功能能使行内部分文字高亮，使用一对反引号。<br>语法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`linux` `网络编程` `socket` `epoll`</span><br></pre></td></tr></table></figure></p>
-<p>效果：<code>linux</code> <code>网络编程</code> <code>socket</code> <code>epoll</code></p>
-<p>也适合做一篇文章的tag</p>
-<h4 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h4><p>直接回车不能换行，<br>可以在上一行文本后面补两个空格，<br>这样下一行的文本就换行了。</p>
-<p>或者就是在两行文本直接加一个空行。</p>
-<p>也能实现换行效果，不过这个行间距有点大。</p>
-<h4 id="斜体、粗体、删除线"><a href="#斜体、粗体、删除线" class="headerlink" title="斜体、粗体、删除线"></a>斜体、粗体、删除线</h4><table>
-<thead>
-<tr>
-<th>语法</th>
-<th>效果</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>*斜体1*</code></td>
-<td><em>斜体1</em></td>
-</tr>
-<tr>
-<td><code>_斜体2_</code></td>
-<td><em>斜体2</em></td>
-</tr>
-<tr>
-<td><code>**粗体1**</code></td>
-<td><strong>粗体1</strong></td>
-</tr>
-<tr>
-<td><code>__粗体2__</code></td>
-<td><strong>粗体2</strong></td>
-</tr>
-<tr>
-<td><code>这是一个 ~~删除线~~</code></td>
-<td>这是一个 <del>删除线</del></td>
-</tr>
-<tr>
-<td><code>***斜粗体1***</code></td>
-<td><strong><em>斜粗体1</em></strong></td>
-</tr>
-<tr>
-<td><code>___斜粗体2___</code></td>
-<td><strong><em>斜粗体2</em></strong></td>
-</tr>
-<tr>
-<td><code>***~~斜粗体删除线1~~***</code></td>
-<td><strong><em><del>斜粗体删除线1</del></em></strong></td>
-</tr>
-<tr>
-<td><code>~~***斜粗体删除线2***~~</code></td>
-<td><del><strong><em>斜粗体删除线2</em></strong></del></td>
-</tr>
-</tbody>
-</table>
-<pre><code>斜体、粗体、删除线可混合使用
-</code></pre><h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>基本格式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![alt](URL title)</span><br></pre></td></tr></table></figure></p>
-<p>alt和title即对应HTML中的alt和title属性（都可省略）：</p>
+<h3 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">如果你是第一次通过ssh登录远程主机，会出现下面的提示：</span><br><span class="line">ssh user@host</span><br><span class="line">The authenticity of host <span class="string">'host (120.18.49.21)'</span> can<span class="string">'t be established.</span></span><br><span class="line"><span class="string">RSA key fingerprint is RSA key.</span></span><br><span class="line"><span class="string">Are you sure you want to continue connecting (yes/no)?</span></span><br></pre></td></tr></table></figure>
+<p>这段话的意思是.无法确认host主机的真实性.只知道它的公钥指纹.问你还想继续连接吗？</p>
+<p>所谓”公钥指纹”.是指公钥长度较长（这里采用RSA算法，长达1024位）.所以对其进行MD5计算.将它变成一个128位的指纹.再进行比较.就容易多了.<br>很自然的一个问题就是.用户怎么知道远程主机的公钥指纹应该是多少？回答是：没有好的办法.远程主机必须在自己的网站上贴出公钥指纹.以便用户自行核对.</p>
+<h4 id="制作钥匙"><a href="#制作钥匙" class="headerlink" title="制作钥匙"></a>制作钥匙</h4><p>生成钥匙的命令都一样.后面带的命令没啥区别.反正个人用够了<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa</span><br></pre></td></tr></table></figure></p>
+<p>回车<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/root/.ssh/id_rsa): <span class="comment">#&lt;== 按 Enter</span></span><br><span class="line">Created directory <span class="string">'/root/.ssh'</span>.</span><br><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase): <span class="comment">#&lt;== 输入密钥锁码，或直接按 Enter 留空</span></span><br><span class="line">Enter same passphrase again: <span class="comment">#&lt;== 再输入一遍密钥锁码</span></span><br><span class="line">Your identification has been saved <span class="keyword">in</span> /root/.ssh/id_rsa. <span class="comment">#&lt;== 私钥</span></span><br><span class="line">Your public key has been saved <span class="keyword">in</span> /root/.ssh/id_rsa.pub. <span class="comment">#&lt;== 公钥</span></span><br><span class="line">The key fingerprint is: null</span><br><span class="line">root@host</span><br></pre></td></tr></table></figure></p>
+<p>私钥设置口令（passphrase）这个嘛…如果是被害妄想症….你就设一个呗.本来刚刚你就生成了一个256位的密码.（设置私钥口令的目的是防止私钥被盗用）.但是设置之后.利用私钥连接也需要输入密码.</p>
+<p>一般在$ROOT/.ssh/目录下.会生成两个文件：id_rsa.pub 公钥 和 id_rsa 私钥..ssh 目录的权限必须是 700.</p>
+<p>sshd 服务器端默认的公钥文件是根目录.ssh下的 authorized_keys 文件.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /.ssh <span class="comment">#进入目录</span></span><br><span class="line">cat id_rsa.pub &gt;&gt; authorized_keys <span class="comment">#钥匙给服务器</span></span><br><span class="line">chmod 700 ~/.ssh <span class="comment">#否则ssh服务器会拒绝登录。</span></span><br><span class="line">chmod 600 ~/.ssh/authorized_keys <span class="comment">#必须是600权限.否则ssh服务器会拒绝用户登陆。</span></span><br></pre></td></tr></table></figure>
+<p>经过以上两步之后.从此你再登录.就不需要输入密码了…此命令执行后.远程主机直接将用户的公钥保存在 ~/.ssh/authorized_keys 文件中</p>
+<h3 id="更改SSH-CONFIG文件提高安全性"><a href="#更改SSH-CONFIG文件提高安全性" class="headerlink" title="更改SSH CONFIG文件提高安全性"></a>更改SSH CONFIG文件提高安全性</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure>
+<p>我比较喜欢用NANO.跟记事本一样的软件.VI是一个神奇的编辑器.至今不会用.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">PermitRootLogin no  <span class="comment">#禁止root登录 </span></span><br><span class="line">RSAAuthentication yes  <span class="comment">#开启证书登录</span></span><br><span class="line">PubkeyAuthentication yes  <span class="comment">#开启证书登录</span></span><br><span class="line">AuthorizedKeysFile    .ssh/authorized_keys   <span class="comment">#证书地址</span></span><br><span class="line">PasswordAuthentication no   <span class="comment">#禁用密码登陆.测试好再用这个.自己吃亏多次 </span></span><br><span class="line">PermitEmptyPasswords no   <span class="comment">#禁止空密码登陆</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># 在确定你的公钥加入到authorzed_keys后重启sshd服务</span></span><br><span class="line">/etc/init.d/sshd restart</span><br></pre></td></tr></table></figure>
+<h3 id="下载私钥转换为-PuTTY-能使用的格式"><a href="#下载私钥转换为-PuTTY-能使用的格式" class="headerlink" title="下载私钥转换为 PuTTY 能使用的格式"></a>下载私钥转换为 PuTTY 能使用的格式</h3><p>用 WinSCP SFTP 等工具把私钥文件 id_rsa 下载回来.然后打开 PuTTYGen.Load私钥如果你刚才设置了密钥锁码.这时则需要输入.</p>
+<p>在 Key comment 中键入对密钥的说明信息.然后单击 Save private key 按钮即可将私钥文件存放为 PuTTY 能使用的PPK格式.</p>
+<p>当使用 PuTTY 登录时.在左侧的 Connection -&gt; SSH -&gt; Auth 中的 Private key file for authentication: 处选择你的私钥文件.登录过程中只需输入密钥锁密码.</p>
+<p>PS:</p>
 <ul>
-<li>alt表示图片显示失败时的替换文本</li>
-<li>title表示鼠标悬停在图片时的显示文本（注意这里要加引号）</li>
+<li>出问题最多的地方就是钥匙地址.为了省事我喜欢用ROOT账户.如果是普通账户的话.SSH地址在~/用户名/.ssh</li>
+<li>PasswordAuthentication YES 小心别把自己关外面了.等登录的时候可以用密匙后.再改成NO.</li>
 </ul>
-<p>URL即图片的url地址，如果引用本仓库中的图片，直接使用<strong>相对路径</strong>就可了，如果引用其他github仓库中的图片要注意格式，即：<code>仓库地址/raw/分支名/图片路径</code>，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/guodongxiaren/ImageCache/raw/master/Logo/foryou.gif</span><br></pre></td></tr></table></figure></p>
-<table>
-<thead>
-<tr>
-<th>#</th>
-<th>语法</th>
-<th>效果</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td><code>![baidu](http://www.baidu.com/img/bdlogo.gif &quot;百度logo&quot;)</code></td>
-<td><img src="http://www.baidu.com/img/bdlogo.gif" alt="baidu" title="百度logo"></td>
-</tr>
-<tr>
-<td>2</td>
-<td><code>![][foryou]</code></td>
-<td>![][foryou]</td>
-</tr>
-</tbody>
-</table>
-<p>注意例2的写法使用了<strong>URL标识符</strong>的形式，在<a href="#链接">链接</a>一节有介绍。</p>
-<blockquote>
-<p>在文末有foryou的定义：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[foryou]:https://github.com/guodongxiaren/ImageCache/raw/master/Logo/foryou.gif</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><h3 id="链接外部URL"><a href="#链接外部URL" class="headerlink" title="链接外部URL"></a>链接外部URL</h3><table>
-<thead>
-<tr>
-<th>#</th>
-<th>语法</th>
-<th>效果</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td><code>[我的博客](http://blog.csdn.net/guodongxiaren &quot;悬停显示&quot;)</code></td>
-<td><a href="http://blog.csdn.net/guodongxiaren" title="悬停显示" target="_blank" rel="noopener">我的博客</a></td>
-</tr>
-<tr>
-<td>2</td>
-<td><code>[我的知乎][zhihu]</code></td>
-<td>[我的知乎][zhihu]</td>
-</tr>
-</tbody>
-</table>
-<p>语法2由两部分组成：</p>
-<ul>
-<li>第一部分使用两个中括号，[ ]里的标识符（本例中zhihu），可以是数字，字母等的组合，标识符上下对应就行了（<strong>姑且称之为URL标识符</strong>）</li>
-<li>第二部分标记实际URL。</li>
-</ul>
-<blockquote>
-<p>使用URL标识符能达到复用的目的，一般把全文所有的URL标识符统一放在文章末尾，这样看起来比较干净。</p>
-<blockquote>
-<p>URL标识符是我起的名字，不知道是否准确。囧。。</p>
-</blockquote>
-</blockquote>
-<h3 id="链接本仓库里的URL"><a href="#链接本仓库里的URL" class="headerlink" title="链接本仓库里的URL"></a>链接本仓库里的URL</h3><table>
-<thead>
-<tr>
-<th>语法</th>
-<th>效果</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>[我的简介](/example/profile.md)</code></td>
-<td><a href="/example/profile.md">我的简介</a></td>
-</tr>
-<tr>
-<td><code>[Book](./Book)</code></td>
-<td><a href="/Book">Book</a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="图片链接"><a href="#图片链接" class="headerlink" title="图片链接"></a>图片链接</h3><p>给图片加链接的本质是混合图片显示语法和普通的链接语法。普通的链接中[ ]内部是链接要显示的文本，而图片链接[ ]里面则是要显示的图片。<br>直接混合两种语法当然可以，但是十分啰嗦，为此我们可以使用URL标识符的形式。</p>
-<table>
-<thead>
-<tr>
-<th>#</th>
-<th>语法</th>
-<th style="text-align:center">效果</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td><code>[![weibo-logo]](http://weibo.com/linpiaochen)</code></td>
-<td style="text-align:center"><a href="http://weibo.com/linpiaochen" target="_blank" rel="noopener">![weibo-logo]</a></td>
-</tr>
-<tr>
-<td>2</td>
-<td><code>[![](/img/zhihu.png &quot;我的知乎，欢迎关注&quot;)][zhihu]</code></td>
-<td style="text-align:center">[<img src="/img/zhihu.png" alt="" title="我的知乎，欢迎关注">][zhihu]</td>
-</tr>
-<tr>
-<td>3</td>
-<td><code>[![csdn-logo]][csdn]</code></td>
-<td style="text-align:center">[![csdn-logo]][csdn]</td>
-</tr>
-</tbody>
-</table>
-<p>因为图片本身和链接本身都支持URL标识符的形式，所以图片链接也可以很简洁（见例3）。<br>注意，此时鼠标悬停时显示的文字是图片的title，而非链接本身的title了。</p>
-<blockquote>
-<p>本文URL标识符都放置于文末</p>
-</blockquote>
-<h3 id="锚点"><a href="#锚点" class="headerlink" title="锚点"></a>锚点</h3><p>其实呢，每一个标题都是一个锚点，和HTML的锚点（<code>#</code>）类似，比如我们 </p>
-<table>
-<thead>
-<tr>
-<th>语法</th>
-<th>效果</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>[回到顶部](#readme)</code></td>
-<td><a href="#readme">回到顶部</a></td>
-</tr>
-</tbody>
-</table>
-<p>不过要注意，标题中的英文字母都被转化为<strong>小写字母</strong>了。</p>
-<blockquote>
-<p>以前GitHub对中文支持的不好，所以中文标题不能正确识别为锚点，但是现在已经没问题啦！</p>
-</blockquote>
-<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><ul>
-<li>昵称：果冻虾仁</li>
-</ul>
-<ul>
-<li>别名：隔壁老王</li>
-</ul>
-<ul>
-<li>英文名：Jelly</li>
-</ul>
-<h3 id="多级无序列表"><a href="#多级无序列表" class="headerlink" title="多级无序列表"></a>多级无序列表</h3><ul>
-<li>编程语言<ul>
-<li>脚本语言<ul>
-<li>Python</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><h4 id="一般效果"><a href="#一般效果" class="headerlink" title="一般效果"></a>一般效果</h4><p>就是在数字后面加一个点，再加一个空格。不过看起来起来可能不够明显。<br>面向对象的三个基本特征：</p>
-<ol>
-<li>封装</li>
-<li>继承</li>
-<li>多态</li>
-</ol>
-<h4 id="多级有序列表"><a href="#多级有序列表" class="headerlink" title="多级有序列表"></a>多级有序列表</h4><p>和无序列表一样，有序列表也有多级结构：  </p>
-<ol>
-<li>这是一级的有序列表，数字1还是1<ol>
-<li>这是二级的有序列表，阿拉伯数字在显示的时候变成了罗马数字<ol>
-<li>这是三级的有序列表，数字在显示的时候变成了英文字母</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-<h3 id="复选框列表"><a href="#复选框列表" class="headerlink" title="复选框列表"></a>复选框列表</h3><ul>
-<li style="list-style: none"><input type="checkbox" checked> 需求分析</li>
-<li style="list-style: none"><input type="checkbox" checked> 系统设计</li>
-<li style="list-style: none"><input type="checkbox" checked> 详细设计</li>
-<li style="list-style: none"><input type="checkbox"> 编码</li>
-<li style="list-style: none"><input type="checkbox"> 测试</li>
-<li style="list-style: none"><input type="checkbox"> 交付</li>
-</ul>
-<p>您可以使用这个功能来标注某个项目各项任务的完成情况。</p>
-<blockquote>
-<p>Tip:</p>
-<blockquote>
-<p>在GitHub的<strong>issue</strong>中使用该语法是可以实时点击复选框来勾选或解除勾选的，而无需修改issue原文。</p>
-</blockquote>
-</blockquote>
-<h2 id="块引用"><a href="#块引用" class="headerlink" title="块引用"></a>块引用</h2><h3 id="常用于引用文本"><a href="#常用于引用文本" class="headerlink" title="常用于引用文本"></a>常用于引用文本</h3><h4 id="文本摘自《深入理解计算机系统》P27"><a href="#文本摘自《深入理解计算机系统》P27" class="headerlink" title="文本摘自《深入理解计算机系统》P27"></a>文本摘自《深入理解计算机系统》P27</h4><p>　令人吃惊的是，在哪种字节顺序是合适的这个问题上，人们表现得非常情绪化。实际上术语“little endian”（小端）和“big endian”（大端）出自Jonathan Swift的《格利佛游记》一书，其中交战的两个派别无法就应该从哪一端打开一个半熟的鸡蛋达成一致。因此，争论沦为关于社会政治的争论。只要选择了一种规则并且始终如一的坚持，其实对于哪种字节排序的选择都是任意的。</p>
-<blockquote>
-<p><strong>“端”（endian）的起源</strong><br>以下是Jonathan Swift在1726年关于大小端之争历史的描述：<br>“……下面我要告诉你的是，Lilliput和Blefuscu这两大强国在过去36个月里一直在苦战。战争开始是由于以下的原因：我们大家都认为，吃鸡蛋前，原始的方法是打破鸡蛋较大的一端，可是当今的皇帝的祖父小时候吃鸡蛋，一次按古法打鸡蛋时碰巧将一个手指弄破了，因此他的父亲，当时的皇帝，就下了一道敕令，命令全体臣民吃鸡蛋时打破较小的一端，违令者重罚。”</p>
-</blockquote>
-<h3 id="块引用有多级结构"><a href="#块引用有多级结构" class="headerlink" title="块引用有多级结构"></a>块引用有多级结构</h3><blockquote>
-<p>数据结构</p>
-<blockquote>
-<p>树</p>
-<blockquote>
-<p>二叉树</p>
-<blockquote>
-<p>平衡二叉树</p>
-<blockquote>
-<p>满二叉树</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<h2 id="代码高亮"><a href="#代码高亮" class="headerlink" title="代码高亮"></a>代码高亮</h2><p>在三个反引号后面加上编程语言的名字，另起一行开始写代码，最后一行再加上三个反引号。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[]args)</span></span>&#123;&#125; <span class="comment">//Java</span></span><br></pre></td></tr></table></figure></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span> <span class="comment">//C</span></span></span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"hello GitHub"</span> <span class="comment">#Bash</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"myH1"</span>).innerHTML=<span class="string">"Welcome to my Homepage"</span>; <span class="comment">//javascipt</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> &amp;<span class="keyword">operator</span>+(<span class="keyword">const</span> <span class="built_in">string</span>&amp; A,<span class="keyword">const</span> <span class="built_in">string</span>&amp; B) <span class="comment">//cpp</span></span><br></pre></td></tr></table></figure>
-<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><table>
-<thead>
-<tr>
-<th>表头1</th>
-<th>表头2</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>表格单元</td>
-<td>表格单元</td>
-<td></td>
-</tr>
-<tr>
-<td>表格单元</td>
-<td>表格单元</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>表头1</th>
-<th>表头2</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>表格单元</td>
-<td>表格单元</td>
-</tr>
-<tr>
-<td>表格单元</td>
-<td>表格单元</td>
-</tr>
-</tbody>
-</table>
-<h3 id="对齐"><a href="#对齐" class="headerlink" title="对齐"></a>对齐</h3><p>表格可以指定对齐方式</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">左对齐</th>
-<th style="text-align:center">居中</th>
-<th style="text-align:right">右对齐</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">col 3 is</td>
-<td style="text-align:center">some wordy text</td>
-<td style="text-align:right">$1600</td>
-</tr>
-<tr>
-<td style="text-align:left">col 2 is</td>
-<td style="text-align:center">centered</td>
-<td style="text-align:right">$12</td>
-</tr>
-<tr>
-<td style="text-align:left">zebra stripes</td>
-<td style="text-align:center">are neat</td>
-<td style="text-align:right">$1</td>
-</tr>
-</tbody>
-</table>
-<h3 id="混合其他语法"><a href="#混合其他语法" class="headerlink" title="混合其他语法"></a>混合其他语法</h3><p>表格单元中的内容可以和其他大多数GFM语法配合使用，如：  </p>
-<h4 id="使用普通文本的删除线，斜体等效果"><a href="#使用普通文本的删除线，斜体等效果" class="headerlink" title="使用普通文本的删除线，斜体等效果"></a>使用普通文本的删除线，斜体等效果</h4><table>
-<thead>
-<tr>
-<th>名字</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Help</td>
-<td><del>Display the</del> help window.</td>
-</tr>
-<tr>
-<td>Close</td>
-<td><em>Closes</em> a window</td>
-</tr>
-</tbody>
-</table>
-<h4 id="表格中嵌入图片（链接）"><a href="#表格中嵌入图片（链接）" class="headerlink" title="表格中嵌入图片（链接）"></a>表格中嵌入图片（链接）</h4><p>其实前面介绍图片显示、图片链接的时候为了清晰就是放在在表格中显示的。</p>
-<table>
-<thead>
-<tr>
-<th>图片</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>![baidu][baidu-logo]</td>
-<td>百度</td>
-</tr>
-</tbody>
-</table>
-<h2 id="表情"><a href="#表情" class="headerlink" title="表情"></a>表情</h2><p>Github的Markdown语法支持添加emoji表情，输入不同的符号码（两个冒号包围的字符）可以显示出不同的表情。</p>
-<p>比如<code>:blush:</code>，可以显示:blush:。</p>
-<p>具体每一个表情的符号码，可以查询GitHub的官方网页<a href="http://www.emoji-cheat-sheet.com" target="_blank" rel="noopener">http://www.emoji-cheat-sheet.com</a>。</p>
-<p>但是这个网页每次都打开<strong>奇慢</strong>。。所以我整理到了本repo中，大家可以直接在此查看<a href="./emoji.md">emoji</a>。</p>
-<h2 id="diff语法"><a href="#diff语法" class="headerlink" title="diff语法"></a>diff语法</h2><p>版本控制的系统中都少不了diff的功能，即展示一个文件内容的增加与删除。<br>GFM中可以显示的展示diff效果。使用绿色表示新增，红色表示删除。</p>
-<p>其语法与代码高亮类似，只是在三个反引号后面写diff，<br>并且其内容中，以 <code>+</code>开头表示新增，<code>-</code>开头表示删除。</p>
-<p>效果如下：</p>
-<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="addition">+ 鸟宿池边树，僧敲月下门</span></span><br><span class="line"><span class="deletion">- 鸟宿池边树，僧推月下门</span></span><br></pre></td></tr></table></figure>
 
       
 
@@ -724,7 +324,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yzeon.com/2017/12/cje8b4vkx0009rgd8y9p586k2/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yzeon.com/2017/12/cje9mxesc0009ccd8x80zemxr/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -738,18 +338,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/12/cje8b4vks0005rgd88v7pmpb0/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/12/cje9mxes90007ccd8y8grjfkh/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          github pages
+          markdown
         
       </div>
     </a>
   
   
-    <a href="/2017/12/cje8b4vky000argd88ef9qfj2/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">使用ssh登录</div>
+    <a href="/2017/12/cje9mxerw0002ccd87gkb3ypl/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">接触LINUX并登录</div>
       <i class="icon-circle-right"></i>
     </a>
   

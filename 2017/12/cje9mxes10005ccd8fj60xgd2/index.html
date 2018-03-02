@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yzeon.com">
-  <title>树莓派安装Let&#39;s Encrypt SSL证书 | YZ学习日志</title>
+  <title>防火墙 | YZ学习日志</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="为了给梯子升级.需要加入TLS传输层安全协议.就有了如下的一篇文章. Let’s Encrypt 简介如果要启用HTTPS.我们就需要从证书授权机构(以下简称CA) 处获取一个证书.Let’s Encrypt 就是一个 CA.我们可以从 Let’s Encrypt 获得网站域名的免费的证书. Certbot 简介Certbot 是Let’s Encrypt官方推荐的获取证书的客户端.可以帮我们获取">
+  <meta name="description" content="iptables.12sudo apt-get install iptables            # ubuntuservice iptables  (start|stop|restart|status) 规则列表iptables -L -n清初列表iptables -F1234567iptables -A INPUT -p tcp --dport 22 -j ACCEPTiptables">
 <meta property="og:type" content="article">
-<meta property="og:title" content="树莓派安装Let&#39;s Encrypt SSL证书">
-<meta property="og:url" content="http://yzeon.com/2018/02/cje8b4vkl0001rgd8ejigtmzh/index.html">
+<meta property="og:title" content="防火墙">
+<meta property="og:url" content="http://yzeon.com/2017/12/cje9mxes10005ccd8fj60xgd2/index.html">
 <meta property="og:site_name" content="YZ学习日志">
-<meta property="og:description" content="为了给梯子升级.需要加入TLS传输层安全协议.就有了如下的一篇文章. Let’s Encrypt 简介如果要启用HTTPS.我们就需要从证书授权机构(以下简称CA) 处获取一个证书.Let’s Encrypt 就是一个 CA.我们可以从 Let’s Encrypt 获得网站域名的免费的证书. Certbot 简介Certbot 是Let’s Encrypt官方推荐的获取证书的客户端.可以帮我们获取">
+<meta property="og:description" content="iptables.12sudo apt-get install iptables            # ubuntuservice iptables  (start|stop|restart|status) 规则列表iptables -L -n清初列表iptables -F1234567iptables -A INPUT -p tcp --dport 22 -j ACCEPTiptables">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-02-27T05:25:21.489Z">
+<meta property="og:updated_time" content="2018-02-27T04:11:16.127Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="树莓派安装Let&#39;s Encrypt SSL证书">
-<meta name="twitter:description" content="为了给梯子升级.需要加入TLS传输层安全协议.就有了如下的一篇文章. Let’s Encrypt 简介如果要启用HTTPS.我们就需要从证书授权机构(以下简称CA) 处获取一个证书.Let’s Encrypt 就是一个 CA.我们可以从 Let’s Encrypt 获得网站域名的免费的证书. Certbot 简介Certbot 是Let’s Encrypt官方推荐的获取证书的客户端.可以帮我们获取">
+<meta name="twitter:title" content="防火墙">
+<meta name="twitter:description" content="iptables.12sudo apt-get install iptables            # ubuntuservice iptables  (start|stop|restart|status) 规则列表iptables -L -n清初列表iptables -F1234567iptables -A INPUT -p tcp --dport 22 -j ACCEPTiptables">
   
     <link rel="alternative" href="/atom.xml" title="YZ学习日志" type="application/atom+xml">
   
@@ -206,42 +206,43 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-certbot" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-iptables" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      树莓派安装Let&#39;s Encrypt SSL证书
+      防火墙
     </h1>
   
 
         
-        <a href="/2018/02/cje8b4vkl0001rgd8ejigtmzh/" class="archive-article-date">
-  	<time datetime="2018-02-27T02:35:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-27</time>
+        <a href="/2017/12/cje9mxes10005ccd8fj60xgd2/" class="archive-article-date">
+  	<time datetime="2017-12-28T09:35:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-28</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>为了给梯子升级.需要加入TLS传输层安全协议.就有了如下的一篇文章.</p>
-<h2 id="Let’s-Encrypt-简介"><a href="#Let’s-Encrypt-简介" class="headerlink" title="Let’s Encrypt 简介"></a>Let’s Encrypt 简介</h2><p>如果要启用HTTPS.我们就需要从证书授权机构(以下简称CA) 处获取一个证书.Let’s Encrypt 就是一个 CA.我们可以从 Let’s Encrypt 获得网站域名的免费的证书.</p>
-<h2 id="Certbot-简介"><a href="#Certbot-简介" class="headerlink" title="Certbot 简介"></a>Certbot 简介</h2><p>Certbot 是Let’s Encrypt官方推荐的获取证书的客户端.可以帮我们获取免费的Let’s Encrypt 证书.Certbot 是支持所有 Lunix 内核的操作系统的.这里系统是UBUNTU16.04 硬件是 树莓派3.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/certbot/certbot</span><br></pre></td></tr></table></figure></p>
-<h3 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h3><ul>
-<li>一级域名哪申请的哪解析.绑定IP</li>
-<li>二级域名可以直接使用DNS方式申请证书.这里不讲了.我也用不上</li>
-<li><a href="https://doub.io/dbwz-3/" target="_blank" rel="noopener">教你申请.tk/.ml/.cf/.gq/.ga等免费域名</a><h3 id="用CERTBOT申请证书"><a href="#用CERTBOT申请证书" class="headerlink" title="用CERTBOT申请证书"></a>用CERTBOT申请证书</h3><h4 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h4>升级系统.安装PPA.添加安装包到仓库.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install software-properties-common</span><br><span class="line">sudo add-apt-repository ppa:certbot/certbot</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install python-certbot-nginx</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="使用nginx插件获取证书"><a href="#使用nginx插件获取证书" class="headerlink" title="使用nginx插件获取证书"></a>使用nginx插件获取证书</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo certbot --nginx</span><br></pre></td></tr></table></figure>
-<p>这种方式会更改Nginx的配置.之前用ACME.SH一直出错.那种是不更改配置的快速部署方式.反正我又没配置什么.加上也是闲置域名.就无所谓改配置的问题了.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo certbot --nginx certonly</span><br></pre></td></tr></table></figure>
-<p>这个是手动模式.开发者文档.所以没事别用这个了.<a href="https://certbot.eff.org/docs" target="_blank" rel="noopener">To learn more about how to use Certbot read our documentation</a></p>
-<h4 id="自动更新"><a href="#自动更新" class="headerlink" title="自动更新"></a>自动更新</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo certbot renew --dry-run</span><br><span class="line">#添加CRONTAB定时任务.每隔2个月的凌晨2点15分运行一次.注意ROOT权限</span><br><span class="line">15 2 * */2 * certbot renew --pre-hook &quot;service nginx stop&quot; --post-hook &quot;service nginx start&quot;</span><br></pre></td></tr></table></figure>
-<p>这个命令是给快到90天的证书续约的.证书地址 /etc/letsencrypt/live/DOMAIN/fullchain.pem  and /etc/letsencrypt/live/DOMAIN/privkey.pem</p>
-<h4 id="验证证书"><a href="#验证证书" class="headerlink" title="验证证书"></a>验证证书</h4><p><a href="https://www.ssllabs.com/ssltest/index.html" target="_blank" rel="noopener">To learn more about how to use Certbot read our documentation</a><br>查验证书的信息.证书有效期是从 2018 年 2 月 27 号到 2018 年的 4 月 26 号.密钥是 RSA 2048 bits.证书签发机构是 Let’s Encrypt Authority X3 .Trusted 为 Yes 表明我这个证书可信.</p>
+        <h2 id="iptables"><a href="#iptables" class="headerlink" title="iptables."></a>iptables.</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install iptables            # ubuntu</span><br><span class="line">service iptables  (start|stop|restart|status)</span><br></pre></td></tr></table></figure>
+<p>规则列表<br>iptables -L -n<br>清初列表<br>iptables -F<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">iptables -A INPUT -p tcp --dport 22 -j ACCEPT</span><br><span class="line">iptables -A INPUT -p tcp --dport 80 -j ACCEPT</span><br><span class="line">iptables -A INPUT -p tcp --dport 443 -j ACCEPT</span><br><span class="line">iptables -A INPUT -p tcp --dport 5830 -j ACCEPT</span><br><span class="line">iptables -A INPUT -p tcp --dport 14151 -j ACCEPT</span><br><span class="line">iptables -A INPUT -p tcp --dport 14152 -j ACCEPT</span><br><span class="line">iptables -A INPUT -p tcp --dport 14153 -j ACCEPT</span><br></pre></td></tr></table></figure></p>
+<p>#允许ping<br>iptables -A INPUT -p icmp -m icmp –icmp-type 8 -j ACCEPT</p>
+<p>#禁止其他未允许的规则访问<br>iptables -A INPUT -j REJECT  #（注意：如果22端口未加入允许规则，SSH链接会直接断开。）<br>iptables -A FORWARD -j REJECT</p>
+<a id="more"></a>
+<p>#屏蔽单个IP的命令是<br>iptables -I INPUT -s 123.45.6.7 -j DROP</p>
+<p>#封整个段即从123.0.0.1到123.255.255.254的命令<br>iptables -I INPUT -s 123.0.0.0/8 -j DROP</p>
+<p>#封IP段即从123.45.0.1到123.45.255.254的命令<br>iptables -I INPUT -s 124.45.0.0/16 -j DROP</p>
+<p>#封IP段即从123.45.6.1到123.45.6.254的命令是<br>iptables -I INPUT -s 123.45.6.0/24 -j DROP</p>
+<p>删除已添加的iptables规则,以序号标记显示<br>iptables -L -n –line-numbers<br>比如要删除INPUT里序号为8的规则(要删除OUTPUT的话就改成OUTPUT，以此类推)<br>iptables -D INPUT 8</p>
+<p>允许35.197.104.169访问本机的8530端口<br>iptables -I INPUT -s 35.197.104.169 -p tcp –dport 8530 -j ACCEPT<br>iptables -I INPUT -s 35.185.163.45 -p tcp –dport 8530 -j ACCEPT<br>iptables -I INPUT -s 192.168.1.0/24 -p tcp –dport 8530 -j ACCEPT</p>
+<p>启用iptables的日志<br>$ iptables -A INPUT -j LOG<br>查看iptables的日志<br>启用iptables日志后。根据您的操作系统，检查以下日志文件来查看iptables日志的生成。<br>在Ubuntu和Debian<br>iptables的日志由内核生成的。因此，检查以下内核日志文件。<br>$ tailf /var/log/kern.log<br>在CentOS / RHEL和Fedora</p>
+<h1 id="cat-var-log-messages"><a href="#cat-var-log-messages" class="headerlink" title="cat /var/log/messages"></a>cat /var/log/messages</h1><p>更改iptables的日志文件名<br>要更改iptables的日志文件名编辑 etc/rsyslog.conf 文件，并添加下列配置到文件中。</p>
+<h1 id="vi-etc-syslog-conf-添加以下行"><a href="#vi-etc-syslog-conf-添加以下行" class="headerlink" title="vi /etc/syslog.conf 添加以下行"></a>vi /etc/syslog.conf 添加以下行</h1><p>kern.warning /var/log/iptables.log 现在，使用以下命令重新启动rsyslog服务。<br>$ service rsyslog restart</p>
+<p>iptables的开机启动及规则保存<br>CentOS上可以执行：service iptables save保存规则。<br>另外更需要注意的是Debian/Ubuntu上iptables是不会保存规则的。<br>需要按如下步骤进行，让网卡关闭是保存iptables规则，启动时加载iptables规则：<br>创建/etc/network/if-post-down.d/iptables 文件，添加如下内容：</p>
+<p>#!/bin/bash<br>iptables-save &gt; /etc/iptables.rules<br>执行：chmod +x /etc/network/if-post-down.d/iptables 添加执行权限。<br>创建/etc/network/if-pre-up.d/iptables 文件，添加如下内容：</p>
+<p>#!/bin/bash<br>iptables-restore &lt; /etc/iptables.rules<br>执行：chmod +x /etc/network/if-pre-up.d/iptables 添加执行权限。<br>关于更多的iptables的使用方法可以执行：iptables –help或网上搜索一下iptables参数的说明。</p>
 
       
 
@@ -300,7 +301,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yzeon.com/2018/02/cje8b4vkl0001rgd8ejigtmzh/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yzeon.com/2017/12/cje9mxes10005ccd8fj60xgd2/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -314,18 +315,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/02/cje8b4vke0000rgd83fctv292/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/12/cje9mxesg000bccd89qixzear/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Caddy安装和配置
+          日志
         
       </div>
     </a>
   
   
-    <a href="/2017/12/cje8b4vl0000brgd80sx1p4cp/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">日志</div>
+    <a href="/2017/12/cje9mxes80006ccd8i1fqeaci/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Lnmp</div>
       <i class="icon-circle-right"></i>
     </a>
   

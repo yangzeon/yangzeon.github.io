@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yzeon.com">
-  <title>日志 | YZ学习日志</title>
+  <title>树莓派安装Let&#39;s Encrypt SSL证书 | YZ学习日志</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="rsyslog1234567---------------------/etc/rsyslog.conf-------------  /etc/rsyslog.conf    Configuration file for rsyslog.                       For more information see                       /usr/share/">
+  <meta name="description" content="为了给梯子升级.需要加入TLS传输层安全协议.就有了如下的一篇文章. Let’s Encrypt 简介如果要启用HTTPS.我们就需要从证书授权机构(以下简称CA) 处获取一个证书.Let’s Encrypt 就是一个 CA.我们可以从 Let’s Encrypt 获得网站域名的免费的证书. Certbot 简介Certbot 是Let’s Encrypt官方推荐的获取证书的客户端.可以帮我们获取">
 <meta property="og:type" content="article">
-<meta property="og:title" content="日志">
-<meta property="og:url" content="http://yzeon.com/2017/12/cje8b4vl0000brgd80sx1p4cp/index.html">
+<meta property="og:title" content="树莓派安装Let&#39;s Encrypt SSL证书">
+<meta property="og:url" content="http://yzeon.com/2018/02/cje9mxert0001ccd8s2ttv0qu/index.html">
 <meta property="og:site_name" content="YZ学习日志">
-<meta property="og:description" content="rsyslog1234567---------------------/etc/rsyslog.conf-------------  /etc/rsyslog.conf    Configuration file for rsyslog.                       For more information see                       /usr/share/">
+<meta property="og:description" content="为了给梯子升级.需要加入TLS传输层安全协议.就有了如下的一篇文章. Let’s Encrypt 简介如果要启用HTTPS.我们就需要从证书授权机构(以下简称CA) 处获取一个证书.Let’s Encrypt 就是一个 CA.我们可以从 Let’s Encrypt 获得网站域名的免费的证书. Certbot 简介Certbot 是Let’s Encrypt官方推荐的获取证书的客户端.可以帮我们获取">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-02-27T03:54:29.497Z">
+<meta property="og:updated_time" content="2018-02-27T05:25:21.489Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="日志">
-<meta name="twitter:description" content="rsyslog1234567---------------------/etc/rsyslog.conf-------------  /etc/rsyslog.conf    Configuration file for rsyslog.                       For more information see                       /usr/share/">
+<meta name="twitter:title" content="树莓派安装Let&#39;s Encrypt SSL证书">
+<meta name="twitter:description" content="为了给梯子升级.需要加入TLS传输层安全协议.就有了如下的一篇文章. Let’s Encrypt 简介如果要启用HTTPS.我们就需要从证书授权机构(以下简称CA) 处获取一个证书.Let’s Encrypt 就是一个 CA.我们可以从 Let’s Encrypt 获得网站域名的免费的证书. Certbot 简介Certbot 是Let’s Encrypt官方推荐的获取证书的客户端.可以帮我们获取">
   
     <link rel="alternative" href="/atom.xml" title="YZ学习日志" type="application/atom+xml">
   
@@ -206,29 +206,42 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-rsyslog" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-certbot" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      日志
+      树莓派安装Let&#39;s Encrypt SSL证书
     </h1>
   
 
         
-        <a href="/2017/12/cje8b4vl0000brgd80sx1p4cp/" class="archive-article-date">
-  	<time datetime="2017-12-28T10:35:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-28</time>
+        <a href="/2018/02/cje9mxert0001ccd8s2ttv0qu/" class="archive-article-date">
+  	<time datetime="2018-02-27T02:35:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>rsyslog<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---------------------/etc/rsyslog.conf-------------</span><br><span class="line">  /etc/rsyslog.conf    Configuration file for rsyslog.</span><br><span class="line"></span><br><span class="line">                       For more information see</span><br><span class="line">                       /usr/share/doc/rsyslog-doc/html/rsyslog_conf.html</span><br><span class="line"></span><br><span class="line">  Default logging rules can be found in /etc/rsyslog.d/50-default.conf</span><br></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line">module(load=&quot;imuxsock&quot;) # provides support for local system logging</span><br><span class="line">module(load=&quot;imklog&quot;)   # provides kernel logging support</span><br><span class="line">#module(load=&quot;immark&quot;)  # provides --MARK-- message capability</span><br><span class="line"></span><br><span class="line"># provides UDP syslog reception</span><br><span class="line">#module(load=&quot;imudp&quot;)</span><br><span class="line">#input(type=&quot;imudp&quot; port=&quot;514&quot;)</span><br><span class="line"></span><br><span class="line"># provides TCP syslog reception</span><br><span class="line">#module(load=&quot;imtcp&quot;)</span><br><span class="line">#input(type=&quot;imtcp&quot; port=&quot;514&quot;)</span><br><span class="line"></span><br><span class="line"># Enable non-kernel facility klog messages</span><br><span class="line">$KLogPermitNonKernelFacility on</span><br><span class="line"></span><br><span class="line">###########################</span><br><span class="line">#### GLOBAL DIRECTIVES ####</span><br><span class="line">###########################</span><br><span class="line"></span><br><span class="line">#</span><br><span class="line"># Use traditional timestamp format.</span><br><span class="line"># To enable high precision timestamps, comment out the following line.</span><br><span class="line">#</span><br><span class="line">$ActionFileDefaultTemplate RSYSLOG_TraditionalFileFormat</span><br><span class="line"></span><br><span class="line"># Filter duplicated messages</span><br><span class="line">$RepeatedMsgReduction on</span><br><span class="line"></span><br><span class="line">#</span><br><span class="line"># Set the default permissions for all log files.</span><br><span class="line">#</span><br><span class="line">$FileOwner syslog</span><br><span class="line">$FileGroup adm</span><br><span class="line">$FileCreateMode 0640</span><br><span class="line">$DirCreateMode 0755</span><br><span class="line">$Umask 0022</span><br><span class="line">$PrivDropToUser syslog</span><br><span class="line">$PrivDropToGroup syslog</span><br><span class="line"></span><br><span class="line">#</span><br><span class="line"># Where to place spool and state files</span><br><span class="line">#</span><br><span class="line">$WorkDirectory /var/spool/rsyslog</span><br><span class="line"></span><br><span class="line">#</span><br><span class="line"># Include all config files in /etc/rsyslog.d/</span><br><span class="line">#</span><br><span class="line">$IncludeConfig /etc/rsyslog.d/*.conf</span><br><span class="line"></span><br><span class="line"># Log all kernel messages to the console.</span><br><span class="line"># Logging much else clutters up the screen.</span><br><span class="line">#kern.* /dev/console</span><br><span class="line"></span><br><span class="line"># Log anything (except mail) of level info or higher.</span><br><span class="line"># Don&apos;t log private authentication messages!</span><br><span class="line">*.info;mail.none;authpriv.none;cron.none /var/log/messages</span><br><span class="line"></span><br><span class="line"># The authpriv file has restricted access.</span><br><span class="line">authpriv.* /var/log/secure</span><br><span class="line"></span><br><span class="line"># Log all the mail messages in one place.</span><br><span class="line">mail.* -/var/log/maillog</span><br><span class="line"></span><br><span class="line"># Log cron stuff</span><br><span class="line">cron.* /var/log/cron</span><br><span class="line"></span><br><span class="line"># Everybody gets emergency messages</span><br><span class="line">*.emerg *</span><br><span class="line"></span><br><span class="line"># Save news errors of level crit and higher in a special file.</span><br><span class="line">uucp,news.crit /var/log/spooler</span><br><span class="line"></span><br><span class="line"># Save boot messages also to boot.log</span><br><span class="line">local7.* /var/log/boot.log</span><br><span class="line"></span><br><span class="line">#iptables log</span><br><span class="line">kern.warning /var/log/iptables.log</span><br></pre></td></tr></table></figure>
+        <p>为了给梯子升级.需要加入TLS传输层安全协议.就有了如下的一篇文章.</p>
+<h2 id="Let’s-Encrypt-简介"><a href="#Let’s-Encrypt-简介" class="headerlink" title="Let’s Encrypt 简介"></a>Let’s Encrypt 简介</h2><p>如果要启用HTTPS.我们就需要从证书授权机构(以下简称CA) 处获取一个证书.Let’s Encrypt 就是一个 CA.我们可以从 Let’s Encrypt 获得网站域名的免费的证书.</p>
+<h2 id="Certbot-简介"><a href="#Certbot-简介" class="headerlink" title="Certbot 简介"></a>Certbot 简介</h2><p>Certbot 是Let’s Encrypt官方推荐的获取证书的客户端.可以帮我们获取免费的Let’s Encrypt 证书.Certbot 是支持所有 Lunix 内核的操作系统的.这里系统是UBUNTU16.04 硬件是 树莓派3.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/certbot/certbot</span><br></pre></td></tr></table></figure></p>
+<h3 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h3><ul>
+<li>一级域名哪申请的哪解析.绑定IP</li>
+<li>二级域名可以直接使用DNS方式申请证书.这里不讲了.我也用不上</li>
+<li><a href="https://doub.io/dbwz-3/" target="_blank" rel="noopener">教你申请.tk/.ml/.cf/.gq/.ga等免费域名</a><h3 id="用CERTBOT申请证书"><a href="#用CERTBOT申请证书" class="headerlink" title="用CERTBOT申请证书"></a>用CERTBOT申请证书</h3><h4 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h4>升级系统.安装PPA.添加安装包到仓库.<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install software-properties-common</span><br><span class="line">sudo add-apt-repository ppa:certbot/certbot</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install python-certbot-nginx</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="使用nginx插件获取证书"><a href="#使用nginx插件获取证书" class="headerlink" title="使用nginx插件获取证书"></a>使用nginx插件获取证书</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo certbot --nginx</span><br></pre></td></tr></table></figure>
+<p>这种方式会更改Nginx的配置.之前用ACME.SH一直出错.那种是不更改配置的快速部署方式.反正我又没配置什么.加上也是闲置域名.就无所谓改配置的问题了.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo certbot --nginx certonly</span><br></pre></td></tr></table></figure>
+<p>这个是手动模式.开发者文档.所以没事别用这个了.<a href="https://certbot.eff.org/docs" target="_blank" rel="noopener">To learn more about how to use Certbot read our documentation</a></p>
+<h4 id="自动更新"><a href="#自动更新" class="headerlink" title="自动更新"></a>自动更新</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo certbot renew --dry-run</span><br><span class="line">#添加CRONTAB定时任务.每隔2个月的凌晨2点15分运行一次.注意ROOT权限</span><br><span class="line">15 2 * */2 * certbot renew --pre-hook &quot;service nginx stop&quot; --post-hook &quot;service nginx start&quot;</span><br></pre></td></tr></table></figure>
+<p>这个命令是给快到90天的证书续约的.证书地址 /etc/letsencrypt/live/DOMAIN/fullchain.pem  and /etc/letsencrypt/live/DOMAIN/privkey.pem</p>
+<h4 id="验证证书"><a href="#验证证书" class="headerlink" title="验证证书"></a>验证证书</h4><p><a href="https://www.ssllabs.com/ssltest/index.html" target="_blank" rel="noopener">To learn more about how to use Certbot read our documentation</a><br>查验证书的信息.证书有效期是从 2018 年 2 月 27 号到 2018 年的 4 月 26 号.密钥是 RSA 2048 bits.证书签发机构是 Let’s Encrypt Authority X3 .Trusted 为 Yes 表明我这个证书可信.</p>
 
       
 
@@ -287,7 +300,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yzeon.com/2017/12/cje8b4vl0000brgd80sx1p4cp/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yzeon.com/2018/02/cje9mxert0001ccd8s2ttv0qu/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -301,18 +314,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/02/cje8b4vkl0001rgd8ejigtmzh/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/02/cje9mxerl0000ccd8h61hgrlw/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          树莓派安装Let&#39;s Encrypt SSL证书
+          Caddy安装和配置
         
       </div>
     </a>
   
   
-    <a href="/2017/12/cje8b4vkp0003rgd8un38ndzt/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">防火墙</div>
+    <a href="/2017/12/cje9mxesg000bccd89qixzear/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">日志</div>
       <i class="icon-circle-right"></i>
     </a>
   

@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yzeon.com">
-  <title>磁盘相关 | YZ学习日志</title>
+  <title>日志 | YZ学习日志</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1234567cd /var/dd if=/dev/zero of=swapfile bs=1M count=2048  #获取1GB的文件块（一般设置为内存的2倍）/sbin/mkswap swapfile       #创建Swap文件/sbin/swapon swapfile       #激活Swap文件chmod 0644 /var/swapfile    #为了安全，建议修改一下权限e">
+  <meta name="description" content="rsyslog1234567---------------------/etc/rsyslog.conf-------------  /etc/rsyslog.conf    Configuration file for rsyslog.                       For more information see                       /usr/share/">
 <meta property="og:type" content="article">
-<meta property="og:title" content="磁盘相关">
-<meta property="og:url" content="http://yzeon.com/2017/12/cje8b4vkq0004rgd8p1yqllvn/index.html">
+<meta property="og:title" content="日志">
+<meta property="og:url" content="http://yzeon.com/2017/12/cje9mxesg000bccd89qixzear/index.html">
 <meta property="og:site_name" content="YZ学习日志">
-<meta property="og:description" content="1234567cd /var/dd if=/dev/zero of=swapfile bs=1M count=2048  #获取1GB的文件块（一般设置为内存的2倍）/sbin/mkswap swapfile       #创建Swap文件/sbin/swapon swapfile       #激活Swap文件chmod 0644 /var/swapfile    #为了安全，建议修改一下权限e">
+<meta property="og:description" content="rsyslog1234567---------------------/etc/rsyslog.conf-------------  /etc/rsyslog.conf    Configuration file for rsyslog.                       For more information see                       /usr/share/">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-02-27T04:14:35.576Z">
+<meta property="og:updated_time" content="2018-02-27T03:54:29.497Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="磁盘相关">
-<meta name="twitter:description" content="1234567cd /var/dd if=/dev/zero of=swapfile bs=1M count=2048  #获取1GB的文件块（一般设置为内存的2倍）/sbin/mkswap swapfile       #创建Swap文件/sbin/swapon swapfile       #激活Swap文件chmod 0644 /var/swapfile    #为了安全，建议修改一下权限e">
+<meta name="twitter:title" content="日志">
+<meta name="twitter:description" content="rsyslog1234567---------------------/etc/rsyslog.conf-------------  /etc/rsyslog.conf    Configuration file for rsyslog.                       For more information see                       /usr/share/">
   
     <link rel="alternative" href="/atom.xml" title="YZ学习日志" type="application/atom+xml">
   
@@ -206,40 +206,29 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-disk" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-rsyslog" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      磁盘相关
+      日志
     </h1>
   
 
         
-        <a href="/2017/12/cje8b4vkq0004rgd8p1yqllvn/" class="archive-article-date">
-  	<time datetime="2017-12-28T06:35:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-28</time>
+        <a href="/2017/12/cje9mxesg000bccd89qixzear/" class="archive-article-date">
+  	<time datetime="2017-12-28T10:35:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-28</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cd /var/</span><br><span class="line">dd if=/dev/zero of=swapfile bs=1M count=2048  #获取1GB的文件块（一般设置为内存的2倍）</span><br><span class="line">/sbin/mkswap swapfile       #创建Swap文件</span><br><span class="line">/sbin/swapon swapfile       #激活Swap文件</span><br><span class="line">chmod 0644 /var/swapfile    #为了安全，建议修改一下权限</span><br><span class="line">echo &quot;/var/swapfile swap swap defaults 0 0&quot; &gt;&gt; /etc/fstab    #将swapfile添加到fstab文件中，开机自动启动</span><br><span class="line">free -m                     #搞定了。此时查看内存信息</span><br></pre></td></tr></table></figure>
-<p>出现 “Swap: 1023” 字样表示设置成功。</p>
-<p>CentOS 7上创建swap分区的步骤</p>
+        <p>rsyslog<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---------------------/etc/rsyslog.conf-------------</span><br><span class="line">  /etc/rsyslog.conf    Configuration file for rsyslog.</span><br><span class="line"></span><br><span class="line">                       For more information see</span><br><span class="line">                       /usr/share/doc/rsyslog-doc/html/rsyslog_conf.html</span><br><span class="line"></span><br><span class="line">  Default logging rules can be found in /etc/rsyslog.d/50-default.conf</span><br></pre></td></tr></table></figure></p>
 <a id="more"></a>
-<p>：<br>①使用dd命令创建一个swap分区</p>
-<p>dd if=/dev/zero of=/home/swap bs=1024 count=1048576<br>count的值是：size（多少M）* 1024，我这里设置的1G虚拟内存，也就是count=1024000.<br>②格式化swap分区</p>
-<p>mkswap /home/swap<br>③把格式化后的文件分区设置为swap分区<br>swapon /home/swap<br>（关闭SWAP分区命令为：[root@localhost Desktop]#swapoff /home/swap）<br>此时，swap分区已经创建好了，使用free命令查看，可见多了一个挂载分区。<br>④swap分区自动挂载<br>vi /etc/fstab<br>在文件末尾加上<br>/home/swap swap swap default 0 0</p>
-<ol>
-<li>查看磁盘空间使用情况：df -h</li>
-<li>进入空间占用最多的目录：cd /</li>
-<li>使用命令 ： du -sh  *   查看根目录下每个文件夹的大小</li>
-<li>进入占用空间比较大的文件夹，然后再使用步骤2,3中命令查找大文件的方法依次查找。</li>
-</ol>
-<p>常用命令<br>查找大文件：find / -type f -size +10G<br>文件大小排序：ls -lhS 或者 du -h * | sort -n</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line">module(load=&quot;imuxsock&quot;) # provides support for local system logging</span><br><span class="line">module(load=&quot;imklog&quot;)   # provides kernel logging support</span><br><span class="line">#module(load=&quot;immark&quot;)  # provides --MARK-- message capability</span><br><span class="line"></span><br><span class="line"># provides UDP syslog reception</span><br><span class="line">#module(load=&quot;imudp&quot;)</span><br><span class="line">#input(type=&quot;imudp&quot; port=&quot;514&quot;)</span><br><span class="line"></span><br><span class="line"># provides TCP syslog reception</span><br><span class="line">#module(load=&quot;imtcp&quot;)</span><br><span class="line">#input(type=&quot;imtcp&quot; port=&quot;514&quot;)</span><br><span class="line"></span><br><span class="line"># Enable non-kernel facility klog messages</span><br><span class="line">$KLogPermitNonKernelFacility on</span><br><span class="line"></span><br><span class="line">###########################</span><br><span class="line">#### GLOBAL DIRECTIVES ####</span><br><span class="line">###########################</span><br><span class="line"></span><br><span class="line">#</span><br><span class="line"># Use traditional timestamp format.</span><br><span class="line"># To enable high precision timestamps, comment out the following line.</span><br><span class="line">#</span><br><span class="line">$ActionFileDefaultTemplate RSYSLOG_TraditionalFileFormat</span><br><span class="line"></span><br><span class="line"># Filter duplicated messages</span><br><span class="line">$RepeatedMsgReduction on</span><br><span class="line"></span><br><span class="line">#</span><br><span class="line"># Set the default permissions for all log files.</span><br><span class="line">#</span><br><span class="line">$FileOwner syslog</span><br><span class="line">$FileGroup adm</span><br><span class="line">$FileCreateMode 0640</span><br><span class="line">$DirCreateMode 0755</span><br><span class="line">$Umask 0022</span><br><span class="line">$PrivDropToUser syslog</span><br><span class="line">$PrivDropToGroup syslog</span><br><span class="line"></span><br><span class="line">#</span><br><span class="line"># Where to place spool and state files</span><br><span class="line">#</span><br><span class="line">$WorkDirectory /var/spool/rsyslog</span><br><span class="line"></span><br><span class="line">#</span><br><span class="line"># Include all config files in /etc/rsyslog.d/</span><br><span class="line">#</span><br><span class="line">$IncludeConfig /etc/rsyslog.d/*.conf</span><br><span class="line"></span><br><span class="line"># Log all kernel messages to the console.</span><br><span class="line"># Logging much else clutters up the screen.</span><br><span class="line">#kern.* /dev/console</span><br><span class="line"></span><br><span class="line"># Log anything (except mail) of level info or higher.</span><br><span class="line"># Don&apos;t log private authentication messages!</span><br><span class="line">*.info;mail.none;authpriv.none;cron.none /var/log/messages</span><br><span class="line"></span><br><span class="line"># The authpriv file has restricted access.</span><br><span class="line">authpriv.* /var/log/secure</span><br><span class="line"></span><br><span class="line"># Log all the mail messages in one place.</span><br><span class="line">mail.* -/var/log/maillog</span><br><span class="line"></span><br><span class="line"># Log cron stuff</span><br><span class="line">cron.* /var/log/cron</span><br><span class="line"></span><br><span class="line"># Everybody gets emergency messages</span><br><span class="line">*.emerg *</span><br><span class="line"></span><br><span class="line"># Save news errors of level crit and higher in a special file.</span><br><span class="line">uucp,news.crit /var/log/spooler</span><br><span class="line"></span><br><span class="line"># Save boot messages also to boot.log</span><br><span class="line">local7.* /var/log/boot.log</span><br><span class="line"></span><br><span class="line">#iptables log</span><br><span class="line">kern.warning /var/log/iptables.log</span><br></pre></td></tr></table></figure>
 
       
 
@@ -298,7 +287,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yzeon.com/2017/12/cje8b4vkq0004rgd8p1yqllvn/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yzeon.com/2017/12/cje9mxesg000bccd89qixzear/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -312,18 +301,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/12/cje8b4vl2000crgd8aulmvy8w/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/02/cje9mxert0001ccd8s2ttv0qu/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          梯子软件
+          树莓派安装Let&#39;s Encrypt SSL证书
         
       </div>
     </a>
   
   
-    <a href="/2017/12/cje8b4vku0007rgd844yy4xks/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Lamp</div>
+    <a href="/2017/12/cje9mxes10005ccd8fj60xgd2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">防火墙</div>
       <i class="icon-circle-right"></i>
     </a>
   
